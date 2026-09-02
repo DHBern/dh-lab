@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: 'DH Lab — Course Website'
+message: >-
+  If you use these teaching materials, please cite them using the metadata from this file.
+type: dataset
+authors:
+  - given-names: Tobias
+    family-names: Hodel
+    email: tobias.hodel@unibe.ch
+    affiliation: University of Bern
+    orcid: 'https://orcid.org/0000-0002-2071-6407'
+  - given-names: Elena
+    family-names: Spadini
+    orcid: 'https://orcid.org/0000-0002-4522-2833'
+  - given-names: Francesco
+    family-names: Beretta
+    orcid: 'https://orcid.org/0000-0002-4389-4126'
+repository-code: 'https://github.com/DHBern/dh-lab/'
+url: 'https://dhbern.github.io/dh-lab/'
+abstract: >-
+  Course website for the "DH Lab", the hands-on companion to "Introduction to Digital
+  Humanities" at the University of Bern (Walter Benjamin Kolleg / Digital Humanities). Over
+  fourteen sessions in the autumn semester the Lab builds a practical digital research workflow:
+  the command line and file systems, Markdown, Git and GitHub, VSCodium, relational data
+  modelling with SQLite, the cultural heritage ontologies RiC-O, LRM and CIDOC-CRM, APIs
+  including the Zotero API and IIIF, TEI encoding, publication with Omeka and GitHub Pages,
+  notebooks and topic modelling, data cleaning and reconciliation with OpenRefine, handwritten
+  text recognition with eScriptorium, and the applied use of multimodal large language models.
+  The Lab also hosts the programme's introductions, consultations and final-year presentations.
+keywords:
+  - Digital Humanities
+  - Teaching
+  - Research Software
+  - Data Cleaning
+  - TEI
+  - Handwritten Text Recognition
+license: CC-BY-SA-4.0
+version: 0.1.0
+date-released: '2026-09-02'

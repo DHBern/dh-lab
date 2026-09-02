@@ -1,0 +1,97 @@
+---
+title: "About"
+lang: en-GB
+date: 2026-09-02
+date-modified: last-modified
+---
+
+
+## Teaching team
+
+Both courses are **co-taught** by three convenors. Session pages and the programme tables carry a
+coloured badge showing who leads which session.
+
+::: {.teach-legend}
+[Hodel]{.teach .teach-hodel} Tobias Hodel
+[Spadini]{.teach .teach-spadini} Elena Spadini
+[Beretta]{.teach .teach-beretta} Francesco Beretta
+[Hart]{.teach .teach-hart} Stephen Hart
+[Demleitner]{.teach .teach-demleitner} Adrian Demleitner
+[Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler
+[Course team]{.teach .teach-team} all three convenors
+:::
+
+### Convenors
+
+#### [Hodel]{.teach .teach-hodel} Prof. Dr. Tobias Hodel
+
+Professor of Digital Humanities, [University of Bern](https://www.dh.unibe.ch/), Walter
+Benjamin Kolleg. ORCID: [0000-0002-2071-6407](https://orcid.org/0000-0002-2071-6407)
+
+Contact: [tobias.hodel@unibe.ch](mailto:tobias.hodel@unibe.ch)
+
+#### [Spadini]{.teach .teach-spadini} Prof. Dr. Elena Spadini
+
+ORCID: [0000-0002-4522-2833](https://orcid.org/0000-0002-4522-2833)
+
+Leads **Session 7** in both courses: *Data modelling: editions*, and the TEI lab that goes with
+it.
+
+#### [Beretta]{.teach .teach-beretta} Prof. Dr. Francesco Beretta
+
+ORCID: [0000-0002-4389-4126](https://orcid.org/0000-0002-4389-4126)
+
+Leads **Session 4** in both courses (*Data structures* and the SQLite lab) and **Session 5** in
+the Intro (*Data modelling: Linked Open Data*).
+
+### Guest sessions in the Lab
+
+| Lab session | Topic | Taught by |
+|:--|:--|:--|
+| [2](/contents/sessions/02.qmd) | Get to know your computer | [Demleitner]{.teach .teach-demleitner} Adrian Demleitner ([ORCID](https://orcid.org/0000-0001-9918-7300)), possibly with further colleagues |
+| [5](/contents/sessions/05.qmd) | From LOD to RiC-O, LRM and CIDOC-CRM | [Hart]{.teach .teach-hart} Stephen Hart ([ORCID](https://orcid.org/0009-0003-6556-5512)) |
+| [10](/contents/sessions/10.qmd) | Data cleaning and connecting: OpenRefine | [Demleitner]{.teach .teach-demleitner} Adrian Demleitner ([ORCID](https://orcid.org/0000-0001-9918-7300)) |
+| [12](/contents/sessions/12.qmd) | GenAI in action: multimodal LLMs | [Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler ([ORCID](https://orcid.org/0000-0003-4229-8688)) |
+
+## About this website
+
+This site is the programme for the *DH Lab*. It is built with [Quarto](https://quarto.org/),
+kept in a public [Git repository](https://github.com/DHBern/dh-lab/) and published automatically
+with GitHub Pages — which is also one of the publication routes you learn here. Use the **Edit
+this page** link in the right-hand margin to see the source of any page, and to propose a
+change.
+
+Corrections, dead links and better tools are welcome as
+[issues](https://github.com/DHBern/dh-lab/issues/new/choose) or pull requests. Contributions from
+participants are credited.
+
+### Course materials
+
+Datasets, scans and anything that cannot be published openly are in the [ILIAS course
+space](https://ilias.unibe.ch/ilias.php?baseClass=ilrepositorygui&cmdNode=yv:ng&cmdClass=ilObjCourseGUI&ref_id=3733960),
+accessible to enrolled students.
+
+### Licence
+
+Text and teaching materials are licensed
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) unless stated otherwise; the
+site's code is licensed [AGPL-3.0](https://github.com/DHBern/dh-lab/blob/main/LICENSE-AGPL.md).
+Third-party material remains under its own licence.
+
+## Related courses and sites
+
+-   **[Introduction to Digital Humanities](https://dhbern.github.io/introduction-to-dh/)** — the
+    companion course, same Tuesdays
+-   [Decoding Inequality](https://dhbern.github.io/decoding-inequality-2025/) — colloquium on
+    machine learning and social inequality
+-   [Digital Humanities Bern](https://dhbern.github.io/) — the department site: projects,
+    services, events
+
+## Imprint
+
+University of Bern\
+Walter Benjamin Kolleg / Digital Humanities\
+Muesmattstrasse 45\
+3012 Bern
+
+[digitalhumanities@unibe.ch](mailto:digitalhumanities@unibe.ch)

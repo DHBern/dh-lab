@@ -1,0 +1,74 @@
+---
+title: "Session 2"
+subtitle: "Get to know your computer"
+author:
+  - name: Adrian Demleitner
+    orcid: 0000-0001-9918-7300
+    role: author
+date: 2026-09-22
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-demleitner}
+[Demleitner]{.teach .teach-demleitner} Taught by **Adrian Demleitner**. Possibly with further colleagues.
+:::
+
+## In this session
+
+-   The **command line**
+-   **Paths** — absolute, relative, and why your script cannot find the file
+-   **Data storage** — what actually happens when you save something
+
+Bring your laptop. Everything in this session happens on your own machine.
+
+## The command line
+
+-   Terminal, shell, prompt: what each word means
+-   Where you are: `pwd`, `ls` / `dir`, `cd`
+-   Making and moving things: `mkdir`, `cp`, `mv`, `rm` — and why `rm` deserves respect
+-   Looking inside files without opening them: `cat`, `head`, `less`
+-   Finding things: `grep`, `find`
+-   Pipes and redirection: `|`, `>`, `>>` — combining small tools into a large one
+-   Getting help: `--help`, `man`
+
+::: {.callout-warning title="macOS, Windows, Linux"}
+The commands differ. On Windows, PowerShell and WSL behave differently again. We work through
+all three; find a neighbour on the same system.
+:::
+
+## Paths
+
+-   Absolute versus relative paths
+-   `.` and `..`, the home directory `~`
+-   Path separators, spaces in filenames, and why "Meine Arbeit Final (2).docx" causes trouble
+-   Extensions, and the fact that they are only a hint
+-   The `PATH` variable — why the computer sometimes says "command not found"
+
+### File naming conventions
+
+A short set of rules that will save you hours later:
+
+-   No spaces, no umlauts, no special characters
+-   `YYYY-MM-DD` for dates, so that sorting by name sorts by time
+-   Consistent, meaningful prefixes
+-   Version in the name only if you are not using version control — from next week, you are
+
+## Data storage
+
+-   Files and file systems, directories as a tree
+-   Bytes, encodings, and why a text file opens as gibberish (UTF-8, and everything before it)
+-   Plain text versus binary formats: which of your files can you still open in twenty years?
+-   Local, external, network, cloud — where "the file" actually is
+-   Backups: the 3-2-1 rule, and the difference between a backup and a sync
+
+## Exercise
+
+Working entirely from the command line: create a project directory with a sensible structure,
+put a text file in it, find it again with `find`, search inside it with `grep`, and copy the
+result somewhere else. Then delete the whole thing and rebuild it — faster.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[What is DH? · What is data? · Zotero
+introduction](https://dhbern.github.io/introduction-to-dh/contents/sessions/02.html)
+:::

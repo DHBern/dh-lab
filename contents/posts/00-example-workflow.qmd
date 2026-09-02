@@ -1,0 +1,68 @@
+---
+title: "How to add your workflow here"
+subtitle: "A template for student contributions"
+description: "What a workflow write-up looks like, and how to add yours to this page."
+author: "Course team"
+date: 2026-09-15
+date-modified: last-modified
+lang: en-GB
+categories: [template]
+---
+
+This page is a placeholder and a template. It is replaced by real workflow write-ups towards the
+end of the semester.
+
+## What goes on this page
+
+Once you have presented your workflow in [Session 13](/contents/sessions/13.qmd) and published
+the write-up, you can have it listed here. Listing is voluntary and needs your explicit consent.
+
+## How to add yours
+
+1.  Fork [this repository](https://github.com/DHBern/dh-lab/).
+2.  Add a file `contents/posts/YYYYMMDD-topic-yourname.qmd`.
+3.  Copy the front matter below and fill it in.
+4.  Open a pull request.
+
+``` yaml
+---
+title: "Your workflow title"
+subtitle: "One line on the question and the method"
+description: "Two or three sentences for the card on the overview page."
+author: "Your Name"
+date: 2026-12-15
+lang: en-GB   # or de-CH
+categories: [openrefine, wikidata, archaeology]
+---
+```
+
+## What the write-up covers
+
+Following the [assignment](/contents/assignment.qmd):
+
+-   **The question** and the material
+-   **The data model** — with the diagram, and a defence of one decision
+-   **The analysis** — method, tool, parameters, and how you checked the result
+-   **The publication** — where it lives, under what licence
+-   **What went wrong** — required, and the most useful part for your readers
+-   **At least three references** that actually informed a decision
+-   **Declared AI use** — which tools, for which steps
+
+## Example
+
+> ### Reconciling place names in a nineteenth-century parish register
+>
+> 2,400 baptism entries transcribed from a parish register, modelled in SQLite, cleaned and
+> reconciled against Wikidata in OpenRefine, and published as a documented CSV with a small
+> Quarto site. Roughly a third of the place names could not be matched automatically; the
+> write-up explains why, and what the failures reveal about the register's geography.
+>
+> → **[Read the write-up](https://example.github.io/parish-register/)** ·
+> **[Data and code](https://github.com/example/parish-register)**
+
+## Licensing and consent
+
+Adding your write-up here means publishing it under the site's
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) licence. Only include material
+you have the right to publish — this matters especially if you worked with archival sources.
+If you change your mind later, open an issue and we will remove the entry.

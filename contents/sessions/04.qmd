@@ -1,0 +1,70 @@
+---
+title: "Session 4"
+subtitle: "Replacing Excel with SQLite for data management"
+author:
+  - name: Francesco Beretta
+    orcid: 0000-0002-4389-4126
+    role: author
+date: 2026-10-06
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-beretta}
+[Beretta]{.teach .teach-beretta} Taught by **Francesco Beretta**.
+:::
+
+## In this session
+
+-   Why a spreadsheet is a bad database
+-   Conceptual modelling, in practice: **[draw.io](https://app.diagrams.net/)** and
+    **[QuickDBD](https://app.quickdatabasediagrams.com/)**
+-   **[SQLite](https://www.sqlite.org/)**: building and querying an actual database
+
+## Why not Excel
+
+Spreadsheets are excellent for arithmetic and poor for data. The failure modes are specific and
+they all bite in humanities projects:
+
+-   No constraints: a date column that contains "um 1480", "1480?" and "ca. 1480" and a
+    typo
+-   No relations: the same person entered fifteen times, spelled twelve ways
+-   Formatting as information — a yellow cell that means something only to you
+-   Silent coercion: identifiers turned into numbers, dates turned into other dates
+-   No history: you cannot tell what changed, or when, or why
+
+## Conceptual modelling, in practice
+
+Continuing directly from [the Intro's data-structures
+session](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html):
+
+-   Entities, attributes, relations — now drawn precisely
+-   Cardinality: one-to-one, one-to-many, many-to-many
+-   Primary and foreign keys
+-   Normalisation, far enough to be useful and no further
+-   **draw.io** for the conceptual diagram, **QuickDBD** for turning a sketch into a schema
+
+## SQLite
+
+-   A whole relational database in a single file, with no server
+-   [DB Browser for SQLite](https://sqlitebrowser.org/) as the graphical way in
+-   `CREATE TABLE`, data types, `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`
+-   `INSERT`, `SELECT`, `WHERE`, `ORDER BY`
+-   `JOIN` — the reason the whole exercise is worth it
+-   `GROUP BY` and aggregates
+-   Importing a CSV, and exporting back out again
+
+## Exercise
+
+Take the articles-and-authors model from the Intro and build it for real:
+
+1.  Draw the schema
+2.  Create the tables in SQLite
+3.  Import your Zotero export
+4.  Write queries that a spreadsheet could not answer — "which authors publish together", "how
+    many items per decade per journal"
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data structures: conceptual modelling, Dublin Core,
+METS](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html)
+:::

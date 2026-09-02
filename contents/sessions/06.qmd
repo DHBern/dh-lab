@@ -1,0 +1,76 @@
+---
+title: "Session 6"
+subtitle: "Introduction to APIs"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+date: 2026-10-20
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hodel}
+[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+:::
+
+## In this session
+
+-   What an API is, and why it matters for research
+-   **Calling the Zotero API** — including setting up a token
+-   **APIs of cultural heritage institutions**
+
+## APIs, concretely
+
+-   Client, server, request, response
+-   HTTP methods, status codes, and what a `404` versus a `403` is telling you
+-   Endpoints, parameters, pagination
+-   **JSON** and XML as response formats; reading a JSON structure without panicking
+-   Authentication: API keys, tokens, and how not to publish yours
+-   Rate limits, and being a well-behaved client
+-   Tools: the browser, `curl`, [Postman](https://www.postman.com/), and Python's `requests`
+
+::: {.callout-warning title="Never commit a token"}
+An API key in a Git repository is a key on the open internet, and deleting it later does not
+help — the history keeps it. Use an `.env` file, and put `.env` in `.gitignore`. We set this up
+together.
+:::
+
+## The Zotero API
+
+Your bibliography, programmatically:
+
+1.  Create an API key in your [Zotero settings](https://www.zotero.org/settings/keys)
+2.  Find your user or group library ID
+3.  Retrieve items, collections and tags
+4.  Request different formats — JSON, BibTeX, CSL JSON
+5.  Paginate through a library larger than one response
+
+This is the direct route from your Zotero library to the website you are building in the
+[Intro's assignment](https://dhbern.github.io/introduction-to-dh/contents/assignment.html): the
+site pulls the bibliography rather than you pasting it.
+
+## APIs of cultural heritage institutions
+
+A survey of what is actually available, and in what shape:
+
+-   **IIIF** — the Image API and the Presentation API; why every serious digitisation project
+    uses it
+-   **OAI-PMH** — metadata harvesting, still the backbone of library and archive exchange
+-   **SPARQL endpoints** — Wikidata and others, following on from Session 5
+-   Institutional REST APIs, and their very variable quality
+
+A collected list of examples: <https://pad.dsl.unibe.ch/p/resed-api-20260129#/>
+
+## Exercise
+
+Pick an institution relevant to your topic, find its API, retrieve twenty records, and save them
+as a local file. Then write down, in three sentences, what the API refused to give you.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data publication: the web as interface · GitHub
+Pages](https://dhbern.github.io/introduction-to-dh/contents/sessions/06.html)
+:::

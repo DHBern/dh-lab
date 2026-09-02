@@ -1,0 +1,75 @@
+name: 🌟 Add Interesting Stuff
+description: Share links to interesting resources, articles, or tools.
+labels: ['interesting stuff']
+body:
+  - type: textarea
+    id: title
+    attributes:
+      label: Title
+      description: 'Provide a concise title for the resource.'
+      placeholder: "E.g., 'The Good Robot Podcast'"
+    validations:
+      required: true
+
+  - type: input
+    id: path
+    attributes:
+      label: URL
+      description: 'Paste the full link to the resource.'
+      placeholder: "E.g., 'https://www.thegoodrobot.co.uk/listennow'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: 'Provide a detailed description of the resource. Mention its purpose, audience, or unique features.'
+      placeholder: "E.g., 'A podcast exploring what feminism can bring to the tech industry.'"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author or Contributor
+      description: 'Provide your name or the name of the original author.'
+      placeholder: "E.g., '[Your Name](https://github.com/yourprofile)'"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date Added
+      description: 'Provide the date the resource was added in YYYY-MM-DD format.'
+      placeholder: "E.g., '2024-11-21'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: categories
+    attributes:
+      label: Categories
+      description: 'Select the category that best fits the resource.'
+      multiple: true
+      options:
+        - Podcast
+        - Article
+        - Tool
+        - Guide
+        - Video
+        - Research
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: code_of_conduct
+    attributes:
+      label: Code of Conduct
+      description: "Confirm that you have read and agree to abide by the project's Code of Conduct (Contributor Covenant)."
+      options:
+        - label: 'I have read and agree to the Code of Conduct.'
+    validations:
+      required: true

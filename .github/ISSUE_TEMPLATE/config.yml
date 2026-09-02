@@ -1,0 +1,8 @@
+contact_links:
+  - name: Are you looking for documentation on dh-lab?
+    url: https://DHBern.github.io/dh-lab
+    about: Please see the documentation for dh-lab on its GitHub Pages page.
+  - name: Do want to discuss dh-lab with the community?
+    url: https://github.com/DHBern/dh-lab/discussions
+    about: Please see the discussions page for dh-lab.
+blank_issues_enabled: true

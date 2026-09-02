@@ -1,0 +1,62 @@
+---
+title: "Session 13"
+subtitle: "Workflow presentations"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+  - name: Elena Spadini
+    orcid: 0000-0002-4522-2833
+    role: author
+  - name: Francesco Beretta
+    orcid: 0000-0002-4389-4126
+    role: author
+date: 2026-12-08
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-team}
+[Course team]{.teach .teach-team} Taught by the course team: Tobias Hodel, Elena Spadini and Francesco Beretta.
+:::
+
+## In this session
+
+Everyone presents their **workflow** — the Lab
+[assignment](/contents/assignment.qmd).
+
+## Format
+
+-   **10–15 minutes** per presentation, plus discussion
+-   Show the actual thing: the data, the model, the code, the output. A slide deck about a
+    workflow is not a workflow.
+-   Live demonstration is welcome and allowed to fail
+
+## What to cover
+
+1.  **The question.** What are you actually trying to find out?
+2.  **The data.** Where it came from, what shape it is in, what you had to do to it
+3.  **The data model.** Show the diagram. Justify one decision and name one you are unsure about.
+4.  **The analysis.** Which method, which tool, which parameters
+5.  **The publication.** Where it lives and who can reach it
+6.  **What went wrong.** Required, not optional. The failures are the most useful part of the
+    session for everyone else in the room.
+
+## Feedback
+
+Each presentation gets structured feedback from the group:
+
+-   One thing that clearly works
+-   One thing that is unclear
+-   One concrete suggestion
+
+Take notes. The written [assignment](/contents/assignment.qmd) is due after this session, and
+the feedback is meant to go into it.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data feminism: reviewing the semester from an intersectional
+perspective](https://dhbern.github.io/introduction-to-dh/contents/sessions/13.html)
+:::
