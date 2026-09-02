@@ -1,0 +1,71 @@
+---
+title: "Session 11"
+subtitle: "Text recognition: introduction to eScriptorium"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+date: 2026-11-24
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hodel}
+[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+:::
+
+## In this session
+
+**[eScriptorium](https://escriptorium.readthedocs.io/)**, hands-on: from a page image to
+machine-readable text.
+
+## OCR and HTR
+
+-   Optical Character Recognition and Handwritten Text Recognition: the same pipeline, different
+    difficulty
+-   Why printed early modern text is often harder than neat nineteenth-century handwriting
+-   The pipeline: image → binarisation → **segmentation** → **transcription** → export
+-   [Kraken](https://kraken.re/) as the engine underneath eScriptorium
+
+## Segmentation
+
+-   Regions and lines, and the baseline model
+-   Reading order, which is a scholarly decision as much as a technical one
+-   Correcting segmentation by hand — and why an hour here saves a day later
+-   Layout that breaks models: marginalia, tables, multi-column pages, insertions
+
+## Transcription and ground truth
+
+-   Transcribing lines in the editor
+-   **Transcription guidelines**: abbreviations, `u`/`v`, `i`/`j`, long s, capitalisation. Decide
+    before you start, write it down, and stay consistent — this is an editorial decision, exactly
+    as in [the TEI session](/contents/sessions/07.qmd)
+-   How much ground truth a model needs
+-   Training and fine-tuning an existing model rather than starting from scratch
+
+## Evaluation
+
+-   **CER** (character error rate) and **WER** (word error rate): what they measure
+-   Why a 5% CER can be excellent or useless depending on what you want to do with the text
+-   Where the errors concentrate — and they always concentrate somewhere
+-   Ground truth is not truth: it is your transcription decisions, made consistent
+
+::: {.callout-note title="This is the Intro's machine-learning session, from the inside"}
+The [Intro](https://dhbern.github.io/introduction-to-dh/contents/sessions/11.html) asks where
+bias enters a machine learning pipeline. Here you occupy the position that answer names: you are
+the person producing the labels.
+:::
+
+## Export
+
+-   ALTO and PAGE XML, and what they contain besides the text
+-   Getting from ALTO to TEI
+-   Publishing images and text together with IIIF
+
+::: {.callout-tip title="In parallel in the Intro"}
+[From algorithms to machine
+learning](https://dhbern.github.io/introduction-to-dh/contents/sessions/11.html)
+:::

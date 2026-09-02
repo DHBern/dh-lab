@@ -1,0 +1,155 @@
+---
+pagetitle: "DH Lab"
+lang: en-GB
+date: 2026-09-02
+date-modified: last-modified
+authors:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+  - name: Elena Spadini
+    orcid: 0000-0002-4522-2833
+    role: author
+  - name: Francesco Beretta
+    orcid: 0000-0002-4389-4126
+    role: author
+copyright:
+  holder: Tobias Hodel, Elena Spadini and Francesco Beretta
+  year: 2026
+license:
+  text: >
+    This licence allows others to distribute, remix, adapt and build upon the work, even
+    commercially, as long as the original author is credited and new works based on it are
+    published under identical terms.
+  type: open-access
+  url: https://creativecommons.org/licenses/by-sa/4.0/
+---
+
+# DH Lab
+
+**Autumn Semester 2026 · Tuesdays 14:00–17:15 · Unitobler, Lerchenweg 36, Room F-123**
+
+::: {.callout-important title="This is the hands-on half of a pair"}
+The Lab runs alongside **[Introduction to Digital Humanities](https://dhbern.github.io/introduction-to-dh/)**
+on the same fourteen Tuesdays. The Intro supplies the concepts — what data is, how it is
+modelled, published and analysed. The Lab is where you build it: the command line, Git, SQLite,
+APIs, TEI, OpenRefine, notebooks, eScriptorium.
+
+→ [Introduction to DH website](https://dhbern.github.io/introduction-to-dh/) · [Joint weekly programme](#weekly-programme)
+:::
+
+## What the Lab is
+
+The Lab is a workshop, not a lecture. Every session is hands-on: you install something, you
+break something, you get it working, and you write down what you did. The point is not to become
+a software developer. The point is to reach the level of technical fluency where you can judge
+what a digital method is doing to your material — and where you can build a small, honest
+research workflow of your own from beginning to end.
+
+Across the semester you will:
+
+-   Get comfortable with **your own computer** — the command line, file paths, how storage
+    actually works
+-   Set up a working environment: **Markdown, Obsidian, Git and GitHub, VSCodium**
+-   Replace a spreadsheet with a **database** and learn to model data properly
+-   Move from Linked Open Data to the formal ontologies used in cultural heritage: **RiC-O, LRM,
+    CIDOC-CRM**
+-   Call **APIs** — Zotero's and those of cultural heritage institutions
+-   Encode a text in **TEI** and understand editing as a form of data publication
+-   Publish a collection in **Omeka**, and judge when to use it rather than GitHub Pages
+-   Run analyses in **notebooks** (Colab / Noto), including topic modelling
+-   Clean and reconcile messy data with **OpenRefine**
+-   Produce your own training data for handwritten text recognition in **eScriptorium**
+-   Put **multimodal LLMs** to work on humanities material — and check what they return
+
+## Who the Lab is for
+
+The Lab is aimed at students of the **MA Major** and **MA Minor Digital Humanities** at the
+University of Bern, and is where the practical part of the programme happens. It also carries
+the programme's own business: introductions to the Major and Minor, individual consultations,
+and the meetings where final-year students report on their theses.
+
+Students from other programmes are welcome. **No prior programming knowledge is required** — the
+first sessions assume nothing beyond being able to use a computer — but the Lab does ask for
+patience with things that do not work the first time.
+
+::: {.callout-note title="Take both, ideally"}
+The Lab and the [Intro](https://dhbern.github.io/introduction-to-dh/) are designed as a pair and
+work best taken together. Each is comprehensible on its own; taken together, the concept in the
+morning and the tool in the afternoon reinforce each other week by week.
+:::
+
+## Organisation
+
+|  |  |
+|--------------------------|----------------------------------------------|
+| **Semester** | Autumn Semester 2026 (HS 2026) |
+| **Time** | Tuesdays, 14:00–17:15 |
+| **First session** | 15 September 2026 |
+| **Last session** | 15 December 2026 |
+| **Room** | Unitobler, Lerchenweg 36, F-123 |
+| **Language** | English |
+| **Companion course** | [Introduction to Digital Humanities](https://dhbern.github.io/introduction-to-dh/) |
+| **Course materials** | [ILIAS course space](https://ilias.unibe.ch/ilias.php?baseClass=ilrepositorygui&cmdNode=yv:ng&cmdClass=ilObjCourseGUI&ref_id=3733960) |
+| **Assessment** | Workflow presentation + write-up, see [Assignment](/contents/assignment.qmd) |
+
+## What to bring
+
+-   **Your own laptop.** Any operating system. The Lab installs software on it — if your machine
+    is managed by an employer and you cannot install anything, tell us in Session 1.
+-   Accounts for [GitHub](https://github.com/) and [Zotero](https://www.zotero.org/) (set up in
+    the Intro, weeks 1 and 2)
+-   A willingness to type commands you do not yet understand
+
+## Weekly programme {#weekly-programme}
+
+| \# | Date | DH Lab | Introduction to DH |
+|:---|:-----|:-------|:-------------------|
+| 1 | 15 Sep | [Programme information, introductions, consultations](/contents/sessions/01.qmd) [Course team]{.teach .teach-team} | Welcome · What is DH [Course team]{.teach .teach-team} |
+| 2 | 22 Sep | [Get to know your computer](/contents/sessions/02.qmd) [Demleitner]{.teach .teach-demleitner} | What is DH? · What is data? [Hodel]{.teach .teach-hodel} |
+| 3 | 29 Sep | [Get to know useful stuff](/contents/sessions/03.qmd) [Hodel]{.teach .teach-hodel} | Forms of data and metadata [Hodel]{.teach .teach-hodel} |
+| 4 | 06 Oct | [Replacing Excel with SQLite](/contents/sessions/04.qmd) [Beretta]{.teach .teach-beretta} | Data structures [Beretta]{.teach .teach-beretta} |
+| 5 | 13 Oct | [From LOD to RiC-O, LRM and CIDOC-CRM](/contents/sessions/05.qmd) [Hart]{.teach .teach-hart} | Linked Open Data [Beretta]{.teach .teach-beretta} |
+| 6 | 20 Oct | [Introduction to APIs](/contents/sessions/06.qmd) [Hodel]{.teach .teach-hodel} | The web as interface [Hodel]{.teach .teach-hodel} |
+| 7 | 27 Oct | [Scholarly editing as data publication (TEI)](/contents/sessions/07.qmd) [Spadini]{.teach .teach-spadini} | Data modelling: editions [Spadini]{.teach .teach-spadini} |
+| 8 | 03 Nov | [Introduction to Omeka](/contents/sessions/08.qmd) [Hodel]{.teach .teach-hodel} | Data analysis: networks [Hodel]{.teach .teach-hodel} |
+| 9 | 10 Nov | [Introduction to Colab / Noto](/contents/sessions/09.qmd) [Hodel]{.teach .teach-hodel} | Data analysis: text corpora [Hodel]{.teach .teach-hodel} |
+| 10 | 17 Nov | [Data cleaning: OpenRefine and reconciliation](/contents/sessions/10.qmd) [Demleitner]{.teach .teach-demleitner} | Geovisualisation [Hodel]{.teach .teach-hodel} |
+| 11 | 24 Nov | [Text recognition: eScriptorium](/contents/sessions/11.qmd) [Hodel]{.teach .teach-hodel} | Algorithms to machine learning [Hodel]{.teach .teach-hodel} |
+| 12 | 01 Dec | [GenAI in action: multimodal LLMs](/contents/sessions/12.qmd) [Prada Ziegler]{.teach .teach-prada} | LLMs: stochastic parrots [Hodel]{.teach .teach-hodel} |
+| 13 | 08 Dec | [Workflow presentations](/contents/sessions/13.qmd) [Course team]{.teach .teach-team} | Data feminism [Hodel]{.teach .teach-hodel} |
+| 14 | 15 Dec | [Final-year presentations (Major / Minor)](/contents/sessions/14.qmd) [Course team]{.teach .teach-team} | FAIR, CARE, sustainability [Course team]{.teach .teach-team} |
+
+::: {.teach-legend}
+[Hodel]{.teach .teach-hodel} Tobias Hodel
+[Spadini]{.teach .teach-spadini} Elena Spadini
+[Beretta]{.teach .teach-beretta} Francesco Beretta
+[Hart]{.teach .teach-hart} Stephen Hart
+[Demleitner]{.teach .teach-demleitner} Adrian Demleitner
+[Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler
+[Course team]{.teach .teach-team} all three convenors
+:::
+
+::: {.callout-note title="Final-year meetings"}
+Students in their final year report on their projects twice during the semester, at **16:00** on
+the days of [Session 3](/contents/sessions/03.qmd) (progress report) and [Session
+8](/contents/sessions/08.qmd) (status report), with the full presentations in [Session
+14](/contents/sessions/14.qmd).
+:::
+
+## Assessment
+
+The Lab is **graded**. It is assessed through a **workflow**: a data model, an analysis and a
+publication, presented in class and written up on GitHub Pages. See the [Assignment](/contents/assignment.qmd) page.
+
+## Contact and imprint
+
+University of Bern\
+Walter Benjamin Kolleg / Digital Humanities\
+Muesmattstrasse 45\
+3012 Bern
+
+[digitalhumanities\@unibe.ch](mailto:digitalhumanities@unibe.ch)

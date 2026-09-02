@@ -1,0 +1,75 @@
+---
+title: "Session 9"
+subtitle: "Introduction to Colab / Noto"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+date: 2026-11-10
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hodel}
+[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+:::
+
+## In this session
+
+-   **Notebooks**: [Google Colab](https://colab.research.google.com/) and
+    [Noto](https://noto.epfl.ch/) (the Swiss academic JupyterHub)
+-   Enough Python to run and adapt someone else's analysis
+-   **Topic modelling** as a worked NLP example
+
+::: {.callout-note title="You are not expected to program"}
+The aim is not to write code from scratch. It is to read a notebook, understand what each cell
+does, change the parts that concern your data, and know when the output is nonsense.
+:::
+
+## Notebooks
+
+-   Cells, kernels, execution order — and why out-of-order execution ruins reproducibility
+-   Markdown cells: a notebook is a document, not just a script
+-   Colab versus Noto: convenience against data protection. **Do not put sensitive or licensed
+    material in Colab.**
+-   Installing packages, uploading data, saving results
+-   Getting a notebook into Git, and why `.ipynb` diffs are unreadable
+
+## Enough Python
+
+-   Variables, lists, dictionaries
+-   Loops and conditions
+-   Reading a file, writing a file
+-   `pandas` for tabular data: load a CSV, filter it, group it, count it
+-   Reading an error message — the single most useful skill in this session
+
+## NLP: from text to numbers
+
+-   Tokenisation, and why it is language-specific
+-   Stopwords, stemming, lemmatisation — what each throws away
+-   Bag-of-words, TF-IDF
+-   Where embeddings differ, briefly
+
+## Topic modelling
+
+-   LDA: the intuition, without the mathematics
+-   Choosing the number of topics — a decision, not a discovery
+-   Preparing a corpus (the one from the [Intro's Voyant
+    session](https://dhbern.github.io/introduction-to-dh/contents/sessions/09.html))
+-   Reading the output: are these topics, or artefacts?
+-   Visualising with pyLDAvis
+-   **The critical question**: a topic model always returns topics. How do you tell a finding
+    from a pattern you imposed?
+
+## Exercise
+
+Run the provided notebook on your own corpus. Change the number of topics three times. Write two
+sentences about what changed and whether any of it was informative.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data analysis: text corpora with Voyant
+Tools](https://dhbern.github.io/introduction-to-dh/contents/sessions/09.html)
+:::

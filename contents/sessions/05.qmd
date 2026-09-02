@@ -1,0 +1,66 @@
+---
+title: "Session 5"
+subtitle: "From Linked Open Data to RiC-O, LRM and CIDOC-CRM"
+author:
+  - name: Stephen Hart
+    orcid: 0009-0003-6556-5512
+    role: author
+date: 2026-10-13
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hart}
+[Hart]{.teach .teach-hart} Taught by **Stephen Hart**.
+:::
+
+## In this session
+
+The formal ontologies that archives, libraries and museums actually use:
+
+-   **RiC-O** — Records in Contexts Ontology (archives)
+-   **LRM** — IFLA Library Reference Model (libraries)
+-   **CIDOC-CRM** — the reference model for cultural heritage (museums)
+
+## From your own model to a shared one
+
+The Intro introduces RDF and Wikidata the same week. This session asks the next question: your
+model works for you — what does it take to make it work for everyone else?
+
+-   Domain ontologies as negotiated agreements, and what the negotiation costs
+-   Why three communities built three models, and where they converge
+-   Mapping and alignment: what survives the translation and what does not
+
+## RiC-O — archives
+
+-   Records in Contexts, and the move away from the single fonds hierarchy
+-   Record resources, agents, activities, relations
+-   Provenance as a first-class object rather than a note
+-   What ISAD(G) could not express, and why archives went to a graph
+
+## LRM — libraries
+
+-   Work, Expression, Manifestation, Item: the distinction, and why it is not pedantry
+-   The FRBR inheritance, and what LRM consolidated
+-   Modelling agents and *nomen*
+-   Where LRM meets BIBFRAME and Wikidata
+
+## CIDOC-CRM — museums and cultural heritage
+
+-   An **event-centric** model: things happen, and objects and people participate
+-   `E5 Event`, `E21 Person`, `E22 Human-Made Object`, `E52 Time-Span`
+-   Why "the vase was made in Athens around 500 BCE" becomes a production event with
+    participants and a time-span
+-   Extensions: CRMarchaeo, CRMtex, and the SDHSS ecosystem from
+    [the Intro's reading](https://dhbern.github.io/introduction-to-dh/contents/sessions/05.html)
+
+## Exercise
+
+Take one object or record from your own material and model it three times — once in RiC-O, once
+in LRM, once in CIDOC-CRM. Then compare: what did each one force you to state, and what did each
+one let you leave out?
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data modelling: Linked Open Data, RDF and
+Wikidata](https://dhbern.github.io/introduction-to-dh/contents/sessions/05.html)
+:::

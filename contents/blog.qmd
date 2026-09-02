@@ -1,0 +1,19 @@
+---
+title: "Student Workflows"
+lang: en-GB
+date-modified: last-modified
+listing:
+  contents: posts
+  type: grid
+  sort: "date desc"
+  categories: true
+---
+
+
+Workflow write-ups produced by participants for the
+[assignment](/contents/assignment.qmd) — data model, analysis and publication, with an account of
+how it was built. Published with the authors' consent.
+
+::: {.callout-note}
+This page fills up towards the end of the semester. It is empty at the start — that is expected.
+:::

@@ -1,0 +1,61 @@
+---
+title: "Session 7"
+subtitle: "Scholarly editing as a form of data publication"
+author:
+  - name: Elena Spadini
+    orcid: 0000-0002-4522-2833
+    role: author
+date: 2026-10-27
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-spadini}
+[Spadini]{.teach .teach-spadini} Taught by **Elena Spadini**.
+:::
+
+## In this session
+
+**TEI**, hands-on. The Intro covers what a scholarly edition *is*; here you encode one.
+
+## Setting up
+
+-   An XML editor: VSCodium with the XML extension, or
+    [Oxygen](https://www.oxygenxml.com/) (the university has licences)
+-   Validation against a schema, and why the editor complains before you do
+-   The [TEI Guidelines](https://tei-c.org/guidelines/) — how to navigate a document that large
+
+## Encoding, step by step
+
+Working on a short source — bring your own if you have one:
+
+1.  **The skeleton.** `<TEI>`, `<teiHeader>`, `<text>`, `<body>`
+2.  **The header.** `<fileDesc>`, `<sourceDesc>`, `<publicationStmt>` — the edition's metadata
+    is part of the edition
+3.  **Structure.** `<div>`, `<p>`, `<lb/>`, `<pb/>`
+4.  **Named entities.** `<persName>`, `<placeName>`, `<orgName>`, `<date>` — and `@ref` pointing
+    to an authority file, which is where this connects back to Sessions 5 and 6
+5.  **Editorial intervention.** `<choice>`, `<orig>`/`<reg>`, `<abbr>`/`<expan>`, `<sic>`/`<corr>`
+6.  **The document itself.** `<del>`, `<add>`, `<unclear>`, `<gap>` — encoding what you cannot
+    read is as important as encoding what you can
+
+## From encoding to publication
+
+The reason this session sits in the Lab and not only in the Intro:
+
+-   XML in, HTML out: transformation with XSLT, or with a publication framework
+-   [TEI Publisher](https://teipublisher.com/), [edition
+    Visualization Technology](https://evt.labcd.unipi.it/), and static approaches
+-   Where the images come from: IIIF, from last week's session
+-   Putting the encoded text in a repository, and what a citable edition needs
+
+## Exercise
+
+Encode one page of a source, validate it, transform it to HTML, and publish it. Then hand your
+file to a neighbour and have them tell you what your encoding claims that you did not intend to
+claim.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data modelling: editions, and what a scholarly digital edition
+is](https://dhbern.github.io/introduction-to-dh/contents/sessions/07.html)
+:::

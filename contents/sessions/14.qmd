@@ -1,0 +1,70 @@
+---
+title: "Session 14"
+subtitle: "Final-year presentations: Master Minor and Master Major"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+  - name: Elena Spadini
+    orcid: 0000-0002-4522-2833
+    role: author
+  - name: Francesco Beretta
+    orcid: 0000-0002-4389-4126
+    role: author
+date: 2026-12-15
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-team}
+[Course team]{.teach .teach-team} Taught by the course team: Tobias Hodel, Elena Spadini and Francesco Beretta.
+:::
+
+## In this session
+
+Presentations by students completing the **Master Minor** and the **Master Major**.
+
+For Major students this is an explicit **test run for the defence**: the same format, the same
+kind of questions, without the consequences.
+
+## Format
+
+| | Master Minor | Master Major |
+|:--|:--|:--|
+| Presentation | Project work (*Projektarbeit*) | MA thesis |
+| Length | To be confirmed | To be confirmed |
+| Setting | Presentation and discussion | Defence rehearsal, with questions from the panel |
+
+::: {.callout-note title="Timings to be confirmed"}
+Exact durations and the running order are fixed during the semester, in the final-year meetings
+in [Session 3](/contents/sessions/03.qmd) and [Session 8](/contents/sessions/08.qmd).
+:::
+
+## What to prepare
+
+-   The **research question** and why it is worth asking
+-   **Sources and data**: what you have, how you got it, what its limits are
+-   **Method**: what you did, and why that rather than something else
+-   **Results**, including the ones that did not fit
+-   **Limitations** — anticipate the objection and make it yourself first
+-   **Reproducibility**: where the data and the code are
+
+## For everyone else
+
+Attendance is expected even if you are not presenting. Watching a defence rehearsal a year or two
+before your own is the cheapest preparation available, and the questions asked of others are the
+questions you will be asked.
+
+## Closing the semester
+
+-   Where the Lab goes next
+-   Colloquia, projects and assistantships at DH Bern
+-   Final questions on the [assignment](/contents/assignment.qmd)
+
+::: {.callout-tip title="In parallel in the Intro"}
+[FAIR, CARE and digital
+sustainability](https://dhbern.github.io/introduction-to-dh/contents/sessions/14.html)
+:::

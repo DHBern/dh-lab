@@ -1,0 +1,65 @@
+---
+title: "Session 12"
+subtitle: "GenAI in action: multimodal LLMs in the humanities"
+author:
+  - name: Ismail Prada Ziegler
+    orcid: 0000-0003-4229-8688
+    role: author
+date: 2026-12-01
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-prada}
+[Prada Ziegler]{.teach .teach-prada} Taught by **Ismail Prada Ziegler**.
+:::
+
+## In this session
+
+Multimodal large language models applied to humanities material — hands-on, and sceptically.
+
+## What multimodal means here
+
+-   Text in, text out; **image in, text out**; document in, structured data out
+-   Where this differs from the specialised tools you have already used: an LLM will transcribe a
+    manuscript page too, but with different failure modes than
+    [eScriptorium](/contents/sessions/11.qmd)
+-   Which models, which interfaces, which costs — and which of them can be run locally
+
+## Working sessions
+
+Bring your own material. We work through:
+
+1.  **Transcription and description of images.** A manuscript page, a photograph, a map. Compare
+    the result with a specialised HTR model on the same page.
+2.  **Extraction into structured data.** Turn a scanned table, a register or a set of records
+    into CSV or JSON. Define the schema first, then ask for it.
+3.  **Classification and tagging** of a set of texts, with a rubric you write yourself.
+4.  **Translation and normalisation** of historical language — and checking it against a source
+    you can actually read.
+
+## The part that matters
+
+For each task, the same three questions:
+
+-   **How would you know it is wrong?** An LLM's confident output looks identical whether it is
+    right or invented. Build the check before you build the pipeline.
+-   **How do you evaluate it at scale?** Spot-checking ten items out of a thousand tells you
+    something, but not what you need. Sampling strategy, and a small hand-made gold standard.
+-   **How do you document it?** The model name, the version, the date, the exact prompt, the
+    parameters. Without them the result is not reproducible and therefore not a result.
+
+## Data protection and ethics
+
+-   What you may send to a commercial API, and what you may not: unpublished sources, personal
+    data, licensed material
+-   Local models as the alternative, and what they cost you in quality
+-   Environmental cost, following the [Intro's
+    reading](https://dhbern.github.io/introduction-to-dh/contents/sessions/12.html)
+-   Declaring AI use in your own work — required in the
+    [assignment](/contents/assignment.qmd), and increasingly in journals
+
+::: {.callout-tip title="In parallel in the Intro"}
+[LLMs: stochastic parrots and research
+agents](https://dhbern.github.io/introduction-to-dh/contents/sessions/12.html)
+:::

@@ -1,0 +1,78 @@
+---
+title: "Session 3"
+subtitle: "Get to know useful stuff"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+date: 2026-09-29
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hodel}
+[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+:::
+
+## In this session
+
+A working environment, assembled in one afternoon:
+
+-   **[Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)**
+-   **[Obsidian](https://obsidian.md/)**
+-   **[GitHub](https://github.com/)**
+-   **[VSCodium](https://vscodium.com/)**
+
+## Markdown
+
+-   Headings, emphasis, lists, links, images, code
+-   Tables, footnotes, block quotes
+-   Why plain text with light markup outlives every word processor
+-   Flavours: GitHub Flavored Markdown, Pandoc, Quarto — and where they differ
+-   Front matter: metadata at the top of the file
+
+::: {.callout-note}
+These course pages are Markdown. Use the **Edit this page** link in the margin to see the source
+of any page here.
+:::
+
+## Obsidian
+
+-   A note archive that is just a folder of Markdown files on your disk
+-   Links between notes, and the graph they form
+-   Tags, search, and daily notes
+-   Plugins — including the Zotero integration
+-   Why "your notes are plain text files you own" is the whole argument
+
+## GitHub and Git
+
+-   Repository, commit, branch, remote — the concepts, then the commands
+-   `git clone`, `git add`, `git commit`, `git push`, `git pull`
+-   `.gitignore`, and what should never go into a repository
+-   Issues and pull requests as a way of working, including with yourself
+-   Merge conflicts: what they are and how to survive one
+
+## VSCodium
+
+-   A code editor without the telemetry ([why VSCodium and not VS Code](https://vscodium.com/#why))
+-   Opening a *folder*, not a file — the mental shift
+-   The integrated terminal, and Git integration
+-   Extensions worth having: Markdown preview, XML, Python, Quarto
+-   Multi-cursor editing, find-and-replace with regex, and the shortcuts that pay for themselves
+
+## Exercise
+
+Create a repository, clone it, write a Markdown file in VSCodium, commit it, push it, and open
+an issue against your own repository. Then break something and recover it.
+
+::: {.callout-important title="Final-year meeting (I) — 16:00"}
+Students in their final year report on their projects.
+:::
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Forms of data and metadata · GitHub
+introduction](https://dhbern.github.io/introduction-to-dh/contents/sessions/03.html)
+:::

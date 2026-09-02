@@ -1,0 +1,73 @@
+---
+title: "Session 8"
+subtitle: "Introduction to Omeka"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+date: 2026-11-03
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-hodel}
+[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+:::
+
+## In this session
+
+-   **[Omeka](https://omeka.org/)**: publishing a collection
+-   Data standards and controlled vocabularies in practice
+-   The Omeka **API**
+-   **What to use when**: GitHub Pages or Omeka?
+
+## Omeka
+
+-   Omeka Classic and Omeka S — what the difference actually means for you
+-   Items, item sets, media, sites
+-   Templates and exhibits: presenting a collection as an argument
+-   Users and permissions, for projects with more than one person
+
+## Data standards
+
+Omeka is built on Dublin Core, which makes the abstractions from the Intro concrete:
+
+-   Filling in the fifteen elements for a real object — and noticing which ones fight you
+-   Resource templates: constraining what may be entered, and why constraint helps
+-   **Controlled vocabularies**: attaching values from GND, Getty AAT, GeoNames or Wikidata
+    instead of typing strings
+-   Linking items to each other, and to the outside world
+
+## The API
+
+-   The Omeka S REST API: reading and writing items
+-   Bulk import from CSV
+-   Getting your data back *out* — the test of any publication platform
+
+## What to use when
+
+An honest comparison, since you now have both:
+
+| | GitHub Pages | Omeka |
+|:--|:--|:--|
+| Best for | a text-led argument, a small documented dataset | an object-led collection with rich metadata |
+| Metadata | whatever you define | Dublin Core, enforced |
+| Who can edit | anyone comfortable with Git | anyone with a login |
+| Hosting | free, static, near-indestructible | needs a server and maintenance |
+| Longevity | very high; it is just files | depends on whoever maintains the instance |
+| Cost of exit | none | export, and hope |
+
+The real question is not which is better. It is: **who will maintain this in five years, and
+what happens when they stop?**
+
+::: {.callout-important title="Final-year meeting (II) — 16:00"}
+Students in their final year report on the status of their projects.
+:::
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data analysis:
+networks](https://dhbern.github.io/introduction-to-dh/contents/sessions/08.html)
+:::

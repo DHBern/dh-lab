@@ -1,0 +1,77 @@
+project:
+  type: website
+
+bibliography: contents/bibliography.bib
+
+website:
+  title: DH Lab
+  favicon: android-chrome-512x512.png
+  open-graph: true
+  twitter-card: true
+  site-url: https://dhbern.github.io/dh-lab/
+  repo-url: https://github.com/DHBern/dh-lab/
+  issue-url: https://github.com/DHBern/dh-lab/issues/new/choose
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+
+  navbar:
+    logo: android-chrome-512x512.png
+    logo-alt: ''
+    logo-href: ''
+    search: true
+    tools:
+      - icon: github
+        url: https://github.com/DHBern/dh-lab/
+    left:
+      - href: contents/home.qmd
+        text: Lab
+      - href: contents/syllabus.qmd
+        text: Programme
+      - href: contents/assignment.qmd
+        text: Assignment
+      - href: contents/resources.qmd
+        text: Toolbox
+      - href: contents/blog.qmd
+        text: Student Workflows
+      - href: contents/about.qmd
+        text: About
+    right:
+      - href: https://dhbern.github.io/introduction-to-dh/
+        text: 'Intro to DH ↗'
+
+  sidebar:
+    collapse-level: 1
+    contents:
+      - href: contents/home.qmd
+        text: Lab
+      - href: contents/syllabus.qmd
+        contents: contents/sessions/*
+      - href: contents/assignment.qmd
+      - href: contents/resources.qmd
+      - section: Student Workflows
+        href: contents/blog.qmd
+        contents: contents/posts/*
+      - href: contents/about.qmd
+      - text: '---'
+      - text: 'Introduction to DH (companion course)'
+        href: https://dhbern.github.io/introduction-to-dh/
+
+format:
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
+    toc: true
+    citations-hover: true
+    crossrefs-hover: true
+    theme: cosmo
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    page-layout: full
+    bibliography-location: document
+
+freeze: true
+
+editor: visual

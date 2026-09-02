@@ -1,0 +1,174 @@
+---
+title: "Programme"
+lang: en-GB
+date: 2026-09-02
+date-modified: last-modified
+---
+
+
+Fourteen Tuesdays, 14:00–17:15, 15 September to 15 December 2026, at Unitobler,
+Lerchenweg 36, Room F-123.
+
+::: {.callout-note title="Bring your laptop"}
+From [Session 2](/contents/sessions/02.qmd) onwards every session is hands-on on your own
+machine. Materials, datasets and anything that cannot be published openly are in the [ILIAS
+course
+space](https://ilias.unibe.ch/ilias.php?baseClass=ilrepositorygui&cmdNode=yv:ng&cmdClass=ilObjCourseGUI&ref_id=3733960).
+:::
+
+## Who teaches what
+
+::: {.teach-legend}
+[Hodel]{.teach .teach-hodel} Tobias Hodel
+[Spadini]{.teach .teach-spadini} Elena Spadini
+[Beretta]{.teach .teach-beretta} Francesco Beretta
+[Hart]{.teach .teach-hart} Stephen Hart
+[Demleitner]{.teach .teach-demleitner} Adrian Demleitner
+[Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler
+[Course team]{.teach .teach-team} all three convenors
+:::
+
+Badges below mark who leads each session.
+
+## Sessions
+
+### [Session 1](/contents/sessions/01.qmd) (15 September 2026)
+
+**Programme information · Introductions · Individual consultations** [Course team]{.teach .teach-team}
+
+Information on the MA Major, MA Minor and the doctoral track; introductions; consultation slots.
+Prepare an answer to the orientation questions on the [session
+page](/contents/sessions/01.qmd).
+
+*In the Intro:* [Welcome · What is
+DH](https://dhbern.github.io/introduction-to-dh/contents/sessions/01.html)
+
+### [Session 2](/contents/sessions/02.qmd) (22 September 2026)
+
+**Get to know your computer** [Demleitner]{.teach .teach-demleitner}
+
+Command line · paths · data storage · file naming conventions.
+
+*In the Intro:* [What is DH? · What is
+data?](https://dhbern.github.io/introduction-to-dh/contents/sessions/02.html)
+
+### [Session 3](/contents/sessions/03.qmd) (29 September 2026)
+
+**Get to know useful stuff** [Hodel]{.teach .teach-hodel}
+
+[Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+· [Obsidian](https://obsidian.md/) · [GitHub](https://github.com/) ·
+[VSCodium](https://vscodium.com/).
+
+**16:00 — Final-year meeting (I): report on projects.**
+
+*In the Intro:* [Forms of data and
+metadata](https://dhbern.github.io/introduction-to-dh/contents/sessions/03.html)
+
+### [Session 4](/contents/sessions/04.qmd) (6 October 2026)
+
+**Replacing Excel with SQLite for data management** [Beretta]{.teach .teach-beretta}
+
+Data modelling in practice: [draw.io](https://app.diagrams.net/) ·
+[SQLite](https://www.sqlite.org/) ·
+[QuickDBD](https://app.quickdatabasediagrams.com/).
+
+*In the Intro:* [Data
+structures](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html)
+
+### [Session 5](/contents/sessions/05.qmd) (13 October 2026)
+
+**From Linked Open Data to RiC-O, LRM and CIDOC-CRM** [Hart]{.teach .teach-hart}
+
+The formal ontologies of archives, libraries and museums.
+
+*In the Intro:* [Data modelling: Linked Open
+Data](https://dhbern.github.io/introduction-to-dh/contents/sessions/05.html)
+
+### [Session 6](/contents/sessions/06.qmd) (20 October 2026)
+
+**Introduction to APIs** [Hodel]{.teach .teach-hodel}
+
+Calling the Zotero API, including token setup · APIs of cultural heritage institutions
+([examples](https://pad.dsl.unibe.ch/p/resed-api-20260129#/)).
+
+*In the Intro:* [Data publication: the web as
+interface](https://dhbern.github.io/introduction-to-dh/contents/sessions/06.html)
+
+### [Session 7](/contents/sessions/07.qmd) (27 October 2026)
+
+**Introduction to scholarly editing as a form of data publication** [Spadini]{.teach .teach-spadini}
+
+TEI, hands-on: encoding, validating, transforming, publishing.
+
+*In the Intro:* [Data modelling:
+editions](https://dhbern.github.io/introduction-to-dh/contents/sessions/07.html)
+
+### [Session 8](/contents/sessions/08.qmd) (3 November 2026)
+
+**Introduction to Omeka** [Hodel]{.teach .teach-hodel}
+
+Data standards · controlled vocabularies · the API · what to use when: GitHub Pages or Omeka.
+
+**16:00 — Final-year meeting (II): report on status.**
+
+*In the Intro:* [Data analysis:
+networks](https://dhbern.github.io/introduction-to-dh/contents/sessions/08.html)
+
+### [Session 9](/contents/sessions/09.qmd) (10 November 2026)
+
+**Introduction to Colab / Noto** [Hodel]{.teach .teach-hodel}
+
+Notebooks · enough Python to adapt an analysis · topic modelling.
+
+*In the Intro:* [Data analysis: text
+corpora](https://dhbern.github.io/introduction-to-dh/contents/sessions/09.html)
+
+### [Session 10](/contents/sessions/10.qmd) (17 November 2026)
+
+**Data cleaning and connecting: OpenRefine** [Demleitner]{.teach .teach-demleitner}
+
+Clustering · GREL · reconciliation against Wikidata, hands-on.
+
+*In the Intro:*
+[Geovisualisation](https://dhbern.github.io/introduction-to-dh/contents/sessions/10.html)
+
+### [Session 11](/contents/sessions/11.qmd) (24 November 2026)
+
+**Text recognition: introduction to eScriptorium** [Hodel]{.teach .teach-hodel}
+
+Segmentation · transcription · ground truth · training and evaluation, hands-on.
+
+*In the Intro:* [From algorithms to machine
+learning](https://dhbern.github.io/introduction-to-dh/contents/sessions/11.html)
+
+### [Session 12](/contents/sessions/12.qmd) (1 December 2026)
+
+**GenAI in action: multimodal LLMs in the humanities** [Prada Ziegler]{.teach .teach-prada}
+
+Transcription, extraction, classification — and how to check any of it.
+
+*In the Intro:* [LLMs: stochastic parrots and research
+agents](https://dhbern.github.io/introduction-to-dh/contents/sessions/12.html)
+
+### [Session 13](/contents/sessions/13.qmd) (8 December 2026)
+
+**Workflow presentations** [Course team]{.teach .teach-team}
+
+Everyone presents their workflow; structured feedback from the group.
+
+*In the Intro:* [Data
+feminism](https://dhbern.github.io/introduction-to-dh/contents/sessions/13.html)
+
+### [Session 14](/contents/sessions/14.qmd) (15 December 2026)
+
+**Presentations: Master Minor and Master Major** [Course team]{.teach .teach-team}
+
+Final-year presentations; for Major students a test run for the defence.
+
+*In the Intro:* [FAIR, CARE and digital
+sustainability](https://dhbern.github.io/introduction-to-dh/contents/sessions/14.html)
+
+## Assessment
+
+See the [Assignment](/contents/assignment.qmd) page.

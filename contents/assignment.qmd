@@ -1,0 +1,105 @@
+---
+title: "Assignment"
+lang: en-GB
+date: 2026-09-02
+date-modified: last-modified
+---
+
+
+The Lab is assessed on a **workflow**: you take a research question of your own through a
+complete chain — data model, data analysis, data publication — and you write it up.
+
+Two deliverables:
+
+1.  A **presentation** of the workflow, in [Session 13](/contents/sessions/13.qmd)
+2.  A **write-up**, published on GitHub Pages
+
+## 1. The workflow
+
+Build and present a workflow that covers all three stages:
+
+### Data model
+
+-   What are the entities in your material, and how do they relate?
+-   Show the model — a diagram from [draw.io](https://app.diagrams.net/), a schema from
+    [QuickDBD](https://app.quickdatabasediagrams.com/), an SQLite schema, an ontology mapping, a
+    TEI customisation. Whatever fits the material.
+-   Justify it. Every model excludes something; say what yours excludes.
+
+### Data analysis
+
+-   Apply at least one method to your data: a query, a network, a topic model, a
+    classification, a reconciliation, a text-recognition pipeline.
+-   **Application of algorithms** is expected — you should be able to say what the algorithm
+    does, not only which button you pressed.
+-   A **prototype** is a legitimate outcome. It does not have to be finished, and it does not
+    have to have worked.
+
+### Data publication
+
+-   Publish the result somewhere it can be reached: GitHub Pages, Omeka, a repository with a DOI.
+-   Data separate from presentation, with a licence and a README.
+
+## 2. The write-up
+
+Publish the account of your workflow **on GitHub Pages**. It should:
+
+-   **Explain the plan.** What you set out to do, how the three stages fit together, what you
+    would do next if the semester were longer.
+-   **Document the steps** in enough detail that someone else could repeat them. Include the
+    dead ends — a workflow write-up that reports only successes is not useful to anyone.
+-   **Refer to at least three articles or chapters** relating to your workflow. They should be
+    texts that actually informed a decision you made, not decoration. Cite them properly — you
+    have Zotero.
+-   **Declare your use of AI tools**: which ones, for which steps. Expected and legitimate;
+    undocumented use is not.
+
+::: {.callout-important title="Link the two assignments together"}
+The three articles or chapters must be **linked from your bibliography website built in the
+[Intro course](https://dhbern.github.io/introduction-to-dh/contents/assignment.html)**. The two
+assignments are meant to connect: the Intro site holds and annotates the literature, the Lab
+write-up puts it to work in a concrete workflow. Link across in both directions.
+:::
+
+## 3. The presentation
+
+10–15 minutes in [Session 13](/contents/sessions/13.qmd), plus discussion. Show the actual
+artefacts rather than slides about them. See the [session
+page](/contents/sessions/13.qmd) for the structure and the feedback format.
+
+## Deadlines
+
+|  |  |
+|------------------------|-----------------------------------------------|
+| Topic agreed | To be confirmed in class |
+| Presentation | 8 December 2026 ([Session 13](/contents/sessions/13.qmd)) |
+| Write-up published | To be confirmed in class |
+
+::: {.callout-warning title="Dates still to be fixed"}
+The remaining deadlines are agreed in the first sessions and entered here.
+:::
+
+## Assessment criteria
+
+The Lab is **graded**. Assessment is based on:
+
+-   **Coherence of the workflow** — do the three stages actually connect, or are they three
+    unrelated exercises?
+-   **Quality of the data model** — is it appropriate to the material, and are its choices
+    defended?
+-   **Soundness of the analysis** — is the method suited to the question, and are the results
+    read with appropriate caution?
+-   **Reproducibility** — could someone else follow the write-up and get the same result?
+-   **Engagement with the literature** — do the three texts inform the work, or decorate it?
+-   **Honesty about limits** — failures documented and understood count in your favour.
+
+## Relation to the Intro assignment
+
+The [Introduction to DH](https://dhbern.github.io/introduction-to-dh/) assignment is separate: a
+Zotero bibliography published as a commented website with an *About* page on the workflow.
+
+The two are designed to connect. The bibliography you build for the Intro is a perfectly good
+dataset for a Lab workflow, and the three texts underpinning your workflow must be linked from
+that Intro site. They are nonetheless handed in and **graded separately**, and neither
+substitutes for the other. See the [Intro
+assignment](https://dhbern.github.io/introduction-to-dh/contents/assignment.html).

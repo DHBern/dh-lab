@@ -1,0 +1,73 @@
+---
+title: "Session 1"
+subtitle: "Programme information, introductions, consultations"
+author:
+  - name: Tobias Hodel
+    orcid: 0000-0002-2071-6407
+    email: tobias.hodel@unibe.ch
+    affiliations:
+      - Walter Benjamin Kolleg / Digital Humanities, University of Bern
+    role: author
+  - name: Elena Spadini
+    orcid: 0000-0002-4522-2833
+    role: author
+  - name: Francesco Beretta
+    orcid: 0000-0002-4389-4126
+    role: author
+date: 2026-09-15
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-team}
+[Course team]{.teach .teach-team} Taught by the course team: Tobias Hodel, Elena Spadini and Francesco Beretta.
+:::
+
+## In this session
+
+-   **Information on the programmes**: MA Major, MA Minor, and the doctoral track
+-   **Introductions** — who is in the room and what they bring
+-   **Individual consultations**
+
+## The programmes
+
+What the Major, the Minor and the doctoral track actually require: modules, credits, deadlines,
+who to ask about what, and how the Lab and the
+[Intro](https://dhbern.github.io/introduction-to-dh/) fit into them.
+
+## Introductions
+
+Everyone introduces themselves briefly. Come with an answer to one of these — whichever fits
+your situation:
+
+::: {.callout-note title="If you are here for the Minor"}
+-   What interests me about DH?
+-   In which direction can I imagine a project (*Projektarbeit*)?
+:::
+
+::: {.callout-note title="If you are here for the Major"}
+-   Which discipline do I come from?
+-   Which direction is my focus?
+-   Which institutions or projects appeal to me, and could be candidates for an MA thesis?
+:::
+
+Think about this before the session. It is the starting point of the individual consultations,
+and for many people it turns into the topic of the [Lab
+assignment](/contents/assignment.qmd).
+
+## Individual consultations
+
+Slots are arranged in the session. Bring your study plan and any open questions about
+recognition of credits, thesis topics or supervision.
+
+## Practical matters
+
+-   **Bring your own laptop** from Session 2 onwards
+-   Set up [Zotero](https://www.zotero.org/) (this week) and
+    [GitHub](https://github.com/) (next week) — announced in the
+    [Intro](https://dhbern.github.io/introduction-to-dh/contents/sessions/01.html)
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Welcome and What is DH: a bird's-eye
+view](https://dhbern.github.io/introduction-to-dh/contents/sessions/01.html)
+:::

@@ -1,0 +1,74 @@
+---
+title: "Session 10"
+subtitle: "Data cleaning and connecting: OpenRefine"
+author:
+  - name: Adrian Demleitner
+    orcid: 0000-0001-9918-7300
+    role: author
+date: 2026-11-17
+date-modified: last-modified
+lang: en-GB
+---
+
+::: {.session-teacher .st-demleitner}
+[Demleitner]{.teach .teach-demleitner} Taught by **Adrian Demleitner**.
+:::
+
+## In this session
+
+**[OpenRefine](https://openrefine.org/)**, hands-on — including reconciliation.
+
+## Why this session exists
+
+By now you have made data: a Zotero export, a Wikidata CSV, a database, an API response. All of
+it is messier than you think. This session is about the part of research nobody puts in the
+methods chapter and everybody spends most of their time on.
+
+## OpenRefine basics
+
+-   Installing and starting it — it runs locally in your browser, your data stays on your machine
+-   Importing CSV, TSV, JSON, XML, Excel
+-   Facets: text, numeric and custom — seeing the shape of a column at a glance
+-   Filtering and mass editing
+-   **Undo/redo and the operation history**: every step is recorded and can be replayed on
+    another dataset. This is the feature that makes cleaning *reproducible*, and it is the whole
+    argument for OpenRefine over doing it by hand.
+
+## Cleaning
+
+-   **Clustering**: finding "Zürich", "Zurich", "Zuerich" and "Zürich " and merging them; the
+    different clustering algorithms and when each works
+-   Trimming whitespace, fixing case, normalising unicode
+-   Splitting and joining columns; splitting multi-valued cells into rows
+-   Transformations with GREL, at the level of a formula rather than a program
+-   Date normalisation, the perpetual problem
+
+## Reconciliation
+
+The step that turns strings into things:
+
+-   Reconciling against **Wikidata** — matching your names to actual entities with identifiers
+-   Reading the match scores, and *not* auto-accepting them
+-   Handling ambiguity: two people with the same name, one person with two records
+-   Fetching additional properties from the reconciled entities — birth dates, coordinates,
+    identifiers you did not have
+-   Other services: GND, VIAF, Getty vocabularies
+-   Exporting the enriched dataset, now with URIs
+
+::: {.callout-note title="This is Linked Open Data, done by hand"}
+Sessions 5 talked about URIs as identifiers. Reconciliation is where your own data acquires
+them. Bring the CSV from the [Intro's Wikidata
+session](https://dhbern.github.io/introduction-to-dh/contents/sessions/05.html) — or better, a
+deliberately messy one.
+:::
+
+## Exercise
+
+Take your messiest dataset. Cluster and merge the names, reconcile them against Wikidata, pull
+in coordinates, and export the result. Then export the **operation history** as JSON and hand it
+in — that file is the actual deliverable.
+
+::: {.callout-tip title="In parallel in the Intro"}
+[Data analysis:
+geovisualisation](https://dhbern.github.io/introduction-to-dh/contents/sessions/10.html)
+:::

@@ -1,0 +1,152 @@
+---
+title: "Toolbox"
+lang: en-GB
+date: 2026-09-02
+date-modified: last-modified
+listing:
+  id: toolbox
+  contents:
+    - title: "VSCodium"
+      path: https://vscodium.com/
+      description: "A build of VS Code without Microsoft's telemetry and branding. Our default editor from Session 3. Open a folder, not a file."
+      date: 2026-09-29
+      categories: [editor, install]
+    - title: "Obsidian"
+      path: https://obsidian.md/download
+      description: "Note archive built on a plain folder of Markdown files on your own disk. Linked notes, tags, plugins — including a Zotero integration."
+      date: 2026-09-29
+      categories: [notes, install]
+    - title: "Markdown basics (GitHub)"
+      path: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+      description: "The reference for GitHub Flavored Markdown. Everything on this site is written in it."
+      date: 2026-09-29
+      categories: [reference]
+    - title: "Git"
+      path: https://git-scm.com/
+      description: "Version control. Install it in Session 3; you will use it every week afterwards. The Pro Git book is free and the first three chapters are enough."
+      date: 2026-09-29
+      categories: [tool, install]
+    - title: "GitHub"
+      path: https://github.com/
+      description: "Hosting for repositories, issues and Pages. Apply for the free GitHub Education benefits with your university address."
+      date: 2026-09-22
+      categories: [tool, essential]
+    - title: "draw.io / diagrams.net"
+      path: https://app.diagrams.net/
+      description: "Free diagram editor that runs in the browser and saves locally. Used for conceptual data models in Session 4."
+      date: 2026-10-06
+      categories: [modelling]
+    - title: "QuickDBD"
+      path: https://app.quickdatabasediagrams.com/
+      description: "Type a schema in shorthand, get a diagram and DDL. Fast way from a sketch to actual tables."
+      date: 2026-10-06
+      categories: [modelling]
+    - title: "SQLite"
+      path: https://www.sqlite.org/
+      description: "A complete relational database in one file, no server. The replacement for the spreadsheet you should not be using."
+      date: 2026-10-06
+      categories: [database, install]
+    - title: "DB Browser for SQLite"
+      path: https://sqlitebrowser.org/
+      description: "Graphical front end for SQLite: create tables, import CSV, run queries. The gentle way in."
+      date: 2026-10-06
+      categories: [database, install]
+    - title: "CIDOC-CRM"
+      path: https://www.cidoc-crm.org/
+      description: "The event-centric reference model for cultural heritage. Session 5."
+      date: 2026-10-13
+      categories: [ontology]
+    - title: "Records in Contexts (RiC-O)"
+      path: https://www.ica.org/standards/RiC/ontology
+      description: "The ICA's ontology for archival description, replacing the single-hierarchy view with a graph. Session 5."
+      date: 2026-10-13
+      categories: [ontology]
+    - title: "IFLA Library Reference Model (LRM)"
+      path: https://www.ifla.org/publications/node/11412
+      description: "Work, Expression, Manifestation, Item — the conceptual model behind modern library cataloguing. Session 5."
+      date: 2026-10-13
+      categories: [ontology]
+    - title: "Zotero Web API"
+      path: https://www.zotero.org/support/dev/web_api/v3/start
+      description: "Retrieve your library programmatically. Create a key in your Zotero settings first. Session 6."
+      date: 2026-10-20
+      categories: [api]
+    - title: "IIIF"
+      path: https://iiif.io/
+      description: "The interoperability standard for images and their presentation. If an institution offers IIIF, use it."
+      date: 2026-10-20
+      categories: [api, standard]
+    - title: "TEI Guidelines"
+      path: https://tei-c.org/guidelines/
+      description: "The reference for encoding texts. Large; learn to navigate it rather than read it. Session 7."
+      date: 2026-10-27
+      categories: [standard]
+    - title: "Omeka"
+      path: https://omeka.org/
+      description: "Publication platform for collections, built on Dublin Core. Session 8."
+      date: 2026-11-03
+      categories: [publication]
+    - title: "Google Colab"
+      path: https://colab.research.google.com/
+      description: "Jupyter notebooks in the browser with free compute. Convenient — but do not put sensitive or licensed material in it."
+      date: 2026-11-10
+      categories: [notebook]
+    - title: "Noto (EPFL / SWITCH)"
+      path: https://noto.epfl.ch/
+      description: "The Swiss academic JupyterHub. Use this instead of Colab when data protection matters."
+      date: 2026-11-10
+      categories: [notebook]
+    - title: "OpenRefine"
+      path: https://openrefine.org/
+      description: "Cleaning and reconciling messy data, with a replayable operation history. Runs locally; your data stays on your machine. Session 10."
+      date: 2026-11-17
+      categories: [cleaning, install]
+    - title: "eScriptorium"
+      path: https://escriptorium.readthedocs.io/
+      description: "Segmentation, transcription and HTR model training, built on Kraken. Session 11."
+      date: 2026-11-24
+      categories: [htr]
+    - title: "Kraken"
+      path: https://kraken.re/
+      description: "The OCR/HTR engine underneath eScriptorium. Useful on its own from the command line."
+      date: 2026-11-24
+      categories: [htr]
+    - title: "Programming Historian"
+      path: https://programminghistorian.org/
+      description: "Peer-reviewed tutorials on digital methods, written for humanists. The place to go when you want to go further than a session did."
+      date: 2026-09-15
+      categories: [tutorial, essential]
+    - title: "Cultural heritage API examples"
+      path: https://pad.dsl.unibe.ch/p/resed-api-20260129#/
+      description: "Collected examples of APIs offered by cultural heritage institutions, gathered for the Lab."
+      date: 2026-10-20
+      categories: [api]
+    - title: "Analysing a bibliography with Gephi"
+      path: https://github.com/RISE-UNIBAS/networks_gephi
+      description: "A worked example from RISE Basel: turning a bibliography into a network and analysing it."
+      date: 2026-11-03
+      categories: [tutorial]
+  sort: "date asc"
+  sort-ui: [title, date, categories]
+  filter-ui: [description]
+  type: grid
+  page-size: 40
+format:
+  html:
+    link-external-icon: false
+---
+
+
+Everything the Lab installs, calls or relies on, roughly in the order it comes up. Items tagged
+**install** need to be on your own laptop.
+
+The [Intro](https://dhbern.github.io/introduction-to-dh/contents/resources.html) keeps a
+complementary list of tools and reference works.
+
+::: {#toolbox}
+:::
+
+## Contribute
+
+Found something better? Open an [issue](https://github.com/DHBern/dh-lab/issues/new/choose) or a
+pull request. Tools suggested by participants are credited.

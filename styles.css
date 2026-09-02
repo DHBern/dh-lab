@@ -1,0 +1,128 @@
+/* css styles */
+
+/* ---------------------------------------------------------------------------
+   Teaching badges
+   One colour per member of the teaching team, used in the programme tables and
+   at the top of each session page. Markup: [Spadini]{.teach .teach-spadini}
+   --------------------------------------------------------------------------- */
+
+.teach {
+	display: inline-block;
+	padding: 0.1em 0.55em;
+	border-radius: 0.4em;
+	font-size: 0.78em;
+	font-weight: 600;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	vertical-align: baseline;
+}
+
+.teach-hodel {
+	background: #e1eefb;
+	color: #14507f;
+	border-color: #b9d7f0;
+}
+
+.teach-spadini {
+	background: #fce6f0;
+	color: #8c1f55;
+	border-color: #f2c2da;
+}
+
+.teach-beretta {
+	background: #e4f4e9;
+	color: #1c6435;
+	border-color: #bfe3cb;
+}
+
+.teach-hart {
+	background: #fdf0d9;
+	color: #8a5100;
+	border-color: #f3dcb0;
+}
+
+.teach-demleitner {
+	background: #ece7fa;
+	color: #4a2d94;
+	border-color: #d3c9f0;
+}
+
+.teach-prada {
+	background: #e0f3f4;
+	color: #0e5c63;
+	border-color: #bee2e5;
+}
+
+.teach-team {
+	background: #ececef;
+	color: #4a4a52;
+	border-color: #d6d6da;
+}
+
+/* Legend under the programme tables */
+
+.teach-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.9rem;
+	margin: 0.75rem 0 1.5rem;
+	padding: 0.75rem 0.9rem;
+	border: 1px solid #e3e3e6;
+	border-radius: 0.5rem;
+	background: #fbfbfc;
+	font-size: 0.9rem;
+}
+
+.teach-legend > span {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+/* Banner at the top of a session page saying who teaches it */
+
+.session-teacher {
+	margin: 0 0 1.25rem;
+	padding: 0.5rem 0.85rem;
+	border-left: 4px solid currentColor;
+	border-radius: 0 0.35rem 0.35rem 0;
+	background: #fafafb;
+	font-size: 0.95rem;
+}
+
+.session-teacher .teach {
+	margin-right: 0.35rem;
+}
+
+/* Programme tables: keep them readable on narrow screens */
+
+table th,
+table td {
+	vertical-align: top;
+}
+
+/* Session banner: left border matches the teacher's colour */
+
+.st-hodel {
+	border-left-color: #14507f;
+}
+.st-spadini {
+	border-left-color: #8c1f55;
+}
+.st-beretta {
+	border-left-color: #1c6435;
+}
+.st-hart {
+	border-left-color: #8a5100;
+}
+.st-demleitner {
+	border-left-color: #4a2d94;
+}
+.st-prada {
+	border-left-color: #0e5c63;
+}
+.st-team {
+	border-left-color: #6f6f78;
+}
