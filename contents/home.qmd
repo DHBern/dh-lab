@@ -87,7 +87,7 @@ morning and the tool in the afternoon reinforce each other week by week.
 |  |  |
 |--------------------------|----------------------------------------------|
 | **Semester** | Autumn Semester 2026 (HS 2026) |
-| **Time** | Tuesdays, 14:00–17:15 |
+| **Time** | Tuesdays, 14:00–17:15 — the Lab **starts at 14:00 sharp** |
 | **First session** | 15 September 2026 |
 | **Last session** | 15 December 2026 |
 | **Room** | Unitobler, Lerchenweg 36, F-123 |
@@ -102,6 +102,7 @@ morning and the tool in the afternoon reinforce each other week by week.
     is managed by an employer and you cannot install anything, tell us in Session 1.
 -   Accounts for [GitHub](https://github.com/) and [Zotero](https://www.zotero.org/) (set up in
     the Intro, weeks 1 and 2)
+-   Membership of the **[DH UniBe Zotero group](https://www.zotero.org/groups/2386895/dh_unibe/)** — ask to be added
 -   A willingness to type commands you do not yet understand
 
 ## Weekly programme {#weekly-programme}

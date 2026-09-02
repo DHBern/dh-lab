@@ -7,7 +7,7 @@ date-modified: last-modified
 
 
 Fourteen Tuesdays, 14:00–17:15, 15 September to 15 December 2026, at Unitobler,
-Lerchenweg 36, Room F-123.
+Lerchenweg 36, Room F-123. The Lab **starts at 14:00 sharp** — not a quarter past.
 
 ::: {.callout-note title="Bring your laptop"}
 From [Session 2](/contents/sessions/02.qmd) onwards every session is hands-on on your own

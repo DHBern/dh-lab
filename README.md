@@ -12,7 +12,7 @@ Hart, Adrian Demleitner and Ismail Prada Ziegler.
 |                      |                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Semester             | Autumn Semester 2026 (HS 2026)                                                                                            |
-| Time                 | Tuesdays, 14:00–17:15                                                                                                     |
+| Time                 | Tuesdays, 14:00–17:15 (sharp)                                                                                             |
 | Room                 | Unitobler, Lerchenweg 36, F-123                                                                                           |
 | First / last session | 15 September 2026 / 15 December 2026                                                                                      |
 | Companion course     | [Introduction to DH](https://dhbern.github.io/introduction-to-dh/) ([repo](https://github.com/DHBern/introduction-to-dh)) |

@@ -5,7 +5,7 @@ bibliography: contents/bibliography.bib
 
 website:
   title: DH Lab
-  favicon: android-chrome-512x512.png
+  favicon: favicon.ico
   open-graph: true
   twitter-card: true
   site-url: https://dhbern.github.io/dh-lab/
@@ -17,9 +17,9 @@ website:
   back-to-top-navigation: true
 
   navbar:
-    logo: android-chrome-512x512.png
-    logo-alt: ''
-    logo-href: ''
+    logo: logo.png
+    logo-alt: 'Digital Humanities, University of Bern'
+    logo-href: 'https://www.dh.unibe.ch/'
     search: true
     tools:
       - icon: github
