@@ -40,6 +40,8 @@ website:
     right:
       - href: https://dhbern.github.io/introduction-to-dh/
         text: 'Intro to DH ↗'
+      - href: https://dhbern.github.io/dh-lecture-series/2026/
+        text: 'Ringvorlesung ↗'
 
   sidebar:
     collapse-level: 1
@@ -57,6 +59,8 @@ website:
       - text: '---'
       - text: 'Introduction to DH (companion course)'
         href: https://dhbern.github.io/introduction-to-dh/
+      - text: 'DH Ringvorlesung'
+        href: https://dhbern.github.io/dh-lecture-series/2026/
 
 format:
   html:
