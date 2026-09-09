@@ -82,6 +82,8 @@ Third-party material remains under its own licence.
 
 -   **[Introduction to Digital Humanities](https://dhbern.github.io/introduction-to-dh/)** — the
     companion course, same Tuesdays
+-   [**DH Ringvorlesung**](https://dhbern.github.io/dh-lecture-series/2026/) — the department's lecture series, Mondays 14:00–16:00 with
+    workshops 16:00–18:00, in German and English
 -   [Decoding Inequality](https://dhbern.github.io/decoding-inequality-2025/) — colloquium on
     machine learning and social inequality
 -   [Digital Humanities Bern](https://dhbern.github.io/) — the department site: projects,
