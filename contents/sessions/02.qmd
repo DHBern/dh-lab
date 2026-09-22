@@ -14,61 +14,567 @@ lang: en-GB
 [Demleitner]{.teach .teach-demleitner} Taught by **Adrian Demleitner**. Possibly with further colleagues.
 :::
 
+# Get to know your computer
+
+**The command line, paths and tools: a peek under the hood**
+
+DH Lab · Session 2 · Tuesday 22 September 2026 · Adrian Demleitner
+
+This morning in the Intro you asked *what data is*. This afternoon we look at the machine that holds it, and at a way of talking to that machine that doesn't involve clicking. By the end of the hour you will have typed into a terminal, and you will know that nothing in it is out to get you.
+
 ## In this session
 
--   The **command line**
--   **Paths** — absolute, relative, and why your script cannot find the file
--   **Data storage** — what actually happens when you save something
+- **Discussion:** how well do you know your computer? Does it have a name?
+- **Under the hood:** the graphical interface (GUI) and the command line (CLI) are two ways of talking to the same system
+- **Paths:** how a computer "cites" a file
+- **First steps in the terminal**, in a sandbox where nothing can break
+- **Command-line tools:** what they are, how to read their options, and how to ask for help
+- **Exercises** in three levels, so everyone can start where they are
 
-Bring your laptop. Everything in this session happens on your own machine.
+## Learning goals
 
-## The command line
+After this session you can:
 
--   Terminal, shell, prompt: what each word means
--   Where you are: `pwd`, `ls` / `dir`, `cd`
--   Making and moving things: `mkdir`, `cp`, `mv`, `rm` — and why `rm` deserves respect
--   Looking inside files without opening them: `cat`, `head`, `less`
--   Finding things: `grep`, `find`
--   Pipes and redirection: `|`, `>`, `>>` — combining small tools into a large one
--   Getting help: `--help`, `man`
+1. Explain that the GUI and the command line are two interfaces to the same system
+2. Read and write **absolute** and **relative** paths, and say what `~`, `.` and `..` mean
+3. Open a terminal and run about ten basic commands inside a sandbox folder
+4. Say what a command-line **tool**, an **option** and an **argument** are, and read a help page
+5. Read an error message without panicking
+6. *(after the exercises)* Explain what **PATH** is, and why you sometimes get "command not found"
 
-::: {.callout-warning title="macOS, Windows, Linux"}
-The commands differ. On Windows, PowerShell and WSL behave differently again. We work through
-all three; find a neighbour on the same system.
-:::
+## Before you start
 
-## Paths
+- **Bring a laptop.** Any operating system will do. You don't need to install anything.
+- **Windows users:** use **PowerShell** (search for *Terminal* or *PowerShell* in the Start menu), not the old "Command Prompt".
+- **macOS users:** use the built-in **Terminal**.
+- **Linux users:** you know where your terminal is.
+- If your laptop is managed by an employer or institution and you can't open a terminal, tell the instructors. There is a GUI-only route through the exercises.
 
--   Absolute versus relative paths
--   `.` and `..`, the home directory `~`
--   Path separators, spaces in filenames, and why "Meine Arbeit Final (2).docx" causes trouble
--   Extensions, and the fact that they are only a hint
--   The `PATH` variable — why the computer sometimes says "command not found"
+**How to read the command tables:** commands are shown for **macOS/Linux** and for **Windows PowerShell**. If a cell says "same", the command is identical. Commands go in `code font`. You type them, then press **Enter**.
 
-### File naming conventions
+## Ground rules
 
-A short set of rules that will save you hours later:
+1. **Work only inside `dh-sandbox`.** It's your playground. Nothing outside it needs to be touched.
+2. **Read the error message out loud.** It usually tells you exactly what's wrong.
+3. **Type, don't paste**, at least the first time. Tab completion and muscle memory are part of the skill.
+4. **`rm` has no trash bin.** Look twice before pressing Enter.
+5. **Neighbour first, then instructor.** Explaining a problem is half of solving it.
+6. **Write down what you did.** In the Lab, your notes are your workflow.
 
--   No spaces, no umlauts, no special characters
--   `YYYY-MM-DD` for dates, so that sorting by name sorts by time
--   Consistent, meaningful prefixes
--   Version in the name only if you are not using version control — from next week, you are
+## Plan for the hour
 
-## Data storage
+| Time      | Part                                    |
+| --------- | --------------------------------------- |
+| 0:00–0:08 | 1. Meet your computer                   |
+| 0:08–0:15 | 2. Under the hood: GUI and CLI          |
+| 0:15–0:25 | 3. Paths                                |
+| 0:25–0:45 | 4. First steps in the terminal          |
+| 0:45–0:55 | 5. Command-line tools and their options |
+| 0:55–1:00 | 6. Wrap-up                              |
 
--   Files and file systems, directories as a tree
--   Bytes, encodings, and why a text file opens as gibberish (UTF-8, and everything before it)
--   Plain text versus binary formats: which of your files can you still open in twenty years?
--   Local, external, network, cloud — where "the file" actually is
--   Backups: the 3-2-1 rule, and the difference between a backup and a sync
+After that come the **exercises** (page below) and the **PATH primer**, which you can do in the rest of the Lab, with support from us.
 
-## Exercise
+---
 
-Working entirely from the command line: create a project directory with a sensible structure,
-put a text file in it, find it again with `find`, search inside it with `grep`, and copy the
-result somewhere else. Then delete the whole thing and rebuild it — faster.
+## 1. Meet your computer
+
+**Discuss (in the room):**
+
+- **Does your computer have a name?** What do you call it? Does the machine know that name? (You will check in part 4.)
+- **Where is the file you saved last?** Desktop, Downloads, Documents, cloud, or "no idea"?
+- **One word for the black window.** What comes to mind when you picture a terminal?
+
+**Rate yourself:** on a scale from 1 (*"I'd rather not touch the terminal"*) to 5 (*"bring it on"*), where are you right now? You'll rate yourself again at the end. There is no right answer, and nobody is behind.
+
+> **A fun fact:** in 1990, RFC 1178 was published under the title *"Choosing a Name for Your Computer"*. Naming machines is a small piece of internet culture.
+
+---
+
+## 2. Under the hood: GUI and CLI
+
+Between you and the hardware there are layers:
+
+```
+You  →  Interface  →  Operating system  →  Hardware
+
+You  →  GUI: windows, icons
+     →  CLI: text
+                   →  files · programs · memory
+                                        →  CPU · RAM · disk
+```
+
+The **operating system** manages files, programs and memory. You talk to it through an **interface**. There are two common ones:
+
+- The **GUI** (graphical user interface): Finder, Explorer, windows, icons, menus
+- The **CLI** (command-line interface): the terminal, where you type text commands
+
+They are **two front-ends to the same system.** Dragging a file into a folder and typing `mv` do the same thing underneath.
+
+**Interfaces are designed.** Desktop, folder, trash can and "save" as a floppy disk are metaphors from the 1970s and 80s. A "folder" isn't a physical object. It's an entry in a table the operating system keeps.
+
+**Trade-offs**
+
+| GUI | CLI |
+|---|---|
+| Easy to discover: you can see what's possible | Easy to repeat: run the same command tomorrow, or on 1,000 files |
+| Good for exploring | Good for documenting: a list of commands records what you did |
+| Clicks leave no record | Text can be saved, shared and versioned (hello, Git) |
+
+For research that must be documented and reproducible, the last row is the reason we care about the command line.
+
+**Try it (2 min):** in Finder or Explorer, switch on **file extensions** and **hidden files**. What appears? The GUI hides some things by default.
+
+---
+
+## 3. Paths
+
+Every file on your computer has an address, called a **path**.
+
+**Think of archival references.** An **absolute path** is like a full reference (repository, fonds, shelfmark): it identifies an item from anywhere. A **relative path** is like *"ibid."* or *"see above"*: it only makes sense from where you currently stand.
+
+| Idea | macOS / Linux | Windows |
+|---|---|---|
+| Root (the top) | `/` | drive letters, e.g. `C:\` |
+| Separator | `/` | `\` (PowerShell also accepts `/`) |
+| Your home folder | `~`, e.g. `/Users/anna` (macOS) | `~`, e.g. `C:\Users\anna` |
+| Where I am now | `.` | `.` |
+| One level up | `..` | `..` |
+
+**Try it in pairs.** Here is a folder tree:
+
+```
+/Users/anna
+└── dh-sandbox
+    ├── sources
+    │   └── letter.txt
+    ├── notes
+    │   └── ideas.txt
+    └── output
+```
+
+You are standing in `sources`. Tell your partner how to reach `ideas.txt` using only a **relative** path. Then give the **absolute** path.
+
+<details>
+<summary>Answer</summary>
+
+Relative: `../notes/ideas.txt`. Absolute: `/Users/anna/dh-sandbox/notes/ideas.txt`.
+
+</details>
+
+**Three traps**
+
+1. **The leading slash matters.** `cd notes` means "the folder `notes` *here*". `cd /notes` means "the folder `notes` at the very top". This is the classic beginner trap.
+2. **Spaces and special characters** cause trouble in commands and URLs. Put quotes around a path that contains spaces, or avoid spaces in your file names. Tab completion helps.
+3. **Your Desktop may not be where you think.** On many Windows machines, Desktop and Documents live inside OneDrive (`C:\Users\name\OneDrive\Desktop`), and iCloud can do the same on macOS. The path may look different from what you expect.
+
+**Get a file's path from the GUI:**
+
+- **Windows:** Shift + right-click on the file → *Copy as path*
+- **macOS:** right-click, hold **Option** → *Copy … as Pathname*
+
+---
+
+## 4. First steps in the terminal
+
+### Open it
+
+| System | How to open |
+|---|---|
+| macOS | Spotlight (⌘ Space) → *Terminal* |
+| Windows | Start → *Terminal* or *PowerShell* (not "Command Prompt") |
+| Linux | usually Ctrl + Alt + T |
+
+- **Terminal** = the window
+- **Shell** = the program inside the window that interprets what you type (zsh or bash, or PowerShell)
+- **Prompt** = the text that means "I'm ready". It usually shows your user name, your *computer's name* (the hostname again) and the current folder.
+
+**Some reassurance:**
+
+- The terminal is a text conversation with your operating system.
+- Nothing happens until you press Enter.
+- Most commands only *look* at things.
+- We work in a sandbox.
+- Error messages are information, not punishment.
+- Everybody, including professional developers, looks up commands constantly.
+
+### Follow along
+
+Type these one after another. After every three or four, stop and look at what happened.
+
+| Step | What we want                 | macOS / Linux                               | Windows PowerShell          |
+| ---- | ---------------------------- | ------------------------------------------- | --------------------------- |
+| 1    | Where am I?                  | `pwd`                                       | `pwd`                       |
+| 2    | Who am I, and which machine? | `whoami` then `hostname`                    | same                        |
+| 3    | What's here?                 | `ls`                                        | `ls`                        |
+| 4    | Make the sandbox             | `mkdir dh-sandbox`                          | same                        |
+| 5    | Go in                        | `cd dh-sandbox`                             | same                        |
+| 6    | Make a folder                | `mkdir notes`                               | same                        |
+| 7    | Write a text file            | `echo "Hello, archive" > notes/hello.txt`   | same                        |
+| 8    | Read it                      | `cat notes/hello.txt`                       | same                        |
+| 9    | Copy it                      | `cp notes/hello.txt notes/hello-copy.txt`   | same                        |
+| 10   | Rename it                    | `mv notes/hello-copy.txt notes/hello-2.txt` | same                        |
+| 11   | Delete it (**no undo!**)     | `rm notes/hello-2.txt`                      | same                        |
+| 12   | Up one level, then home      | `cd ..` then `cd ~`                         | same                        |
+| 13   | Show it in the GUI           | `open .`                                    | `start .` (or `explorer .`) |
+
+Notes on the steps:
+
+- **Step 5:** run `pwd` again. That is the **absolute path** of your sandbox.
+- **Step 7:** `>` creates the file, or **overwrites** it if it already exists. (`>>` appends. You'll try it in the exercises.)
+- **Step 13:** put Finder/Explorer and the terminal side by side. It's the same folder, seen twice.
+
+> **Windows notes**
+>
+> - PowerShell has shortcuts (aliases) so that `ls`, `cd`, `cp`, `mv`, `rm`, `cat` and `pwd` look like the macOS/Linux ones. Under the hood they are different commands, but close enough for now.
+> - Create folders **one at a time**. `mkdir a b c` behaves differently in PowerShell from bash.
+> - If your prompt starts with `C:\>` (without `PS`), you're in the old Command Prompt. Close it and open *Terminal* or *PowerShell*.
+
+### Your safety kit
+
+- **Tab** completes names. It saves typing and prevents typos.
+- **↑ / ↓** bring back your previous commands.
+- **Ctrl + C** stops whatever is running. When in doubt, press it.
+- **`clear`** tidies the screen.
+- **Help** is always one command away (see part 5).
+
+### Errors are readable
+
+Try these on purpose:
+
+1. A typo in a command (`lss`) → *command not found* / *not recognized*. **It means:** the shell couldn't find a program with that name.
+2. `cd nonexistent` → *No such file or directory*. **It means:** there's no such folder here. Check where you are with `pwd`.
+
+---
+
+## 5. Command-line tools and their options
+
+### What is a command-line tool?
+
+A **command-line tool** is a small program that you run by typing its name. It usually does **one thing well**: it takes some input (a file, some text, a folder), does its job, and prints a result. You already used several: `ls` lists files, `cp` copies them, `mv` moves them.
+
+Tools come in two kinds:
+
+- **Built-in tools** come with your system: `ls`, `cd`, `cp`, `mkdir`, `cat`
+- **Installed tools** you add yourself: for example `git` or `python`
+
+**Tools you will meet in the DH Lab and Grundkurs:**
+
+| Tool | What it does | Where you meet it |
+|---|---|---|
+| `git` | version control for your files | Session 3 |
+| `python` / `python3` | runs Python programs | Grundkurs Programmieren |
+| `sqlite3` | opens and queries SQLite databases | Session 4 |
+| `curl` | fetches things from URLs and APIs | Session 6 |
+| `pandoc` | converts between text formats (Markdown, Word, PDF…) | not in the course, but popular in DH |
+
+**Small tools, combined.** The real power of the command line is that tools can be chained together (see "Combining tools" below).
+
+### Anatomy of a command
+
+```
+ls  -l  Documents
+│    │      └── argument: what to act on
+│    └── option (flag): how to act
+└── command: what to do
+```
+
+- The **command** (the tool's name) says *what to do*.
+- **Options** (also called *flags*) change *how* it does it.
+- **Arguments** say *what to do it to*: a file, a folder, a piece of text.
+
+### How options are written
+
+**On macOS/Linux (bash/zsh)**
+
+| Style | Looks like | Example |
+|---|---|---|
+| Short option | one dash, one letter: `-l` | `ls -l` |
+| Several short options together | `-lah` means `-l -a -h` | `ls -lah` |
+| Long option | two dashes, a word: `--help` | `git --version` |
+| Option with a value | `-n 5` or `--lines=5` | `head -n 5 file.txt` |
+
+Options normally come **before** the arguments.
+
+**On Windows PowerShell**
+
+PowerShell tools are called *cmdlets*, with names like `Get-ChildItem` (which `ls` is a shortcut for). Their options are **named parameters** with a single dash and a word: `-Force`, `-Recurse`, `-First 5`. They can't be combined like `-lah`, but you can press **Tab** to complete them.
+
+> **Watch out:** the same letter can mean different things in different tools. In `cp`, `-r` means *recursive* (copy the folder and its contents), but in `ls` and `sort`, `-r` means *reverse*. And `-h` often means *help*, but in `ls -lh` it means *human-readable sizes*. When in doubt, check the help.
+
+### Common options
+
+| I want to… | Option | macOS / Linux | Windows PowerShell |
+|---|---|---|---|
+| See the tool's help | `--help` | `git --help` | `Get-Help ls` |
+| Check a tool's version, or whether it is installed | `--version` | `python3 --version` | `python --version` |
+| List with details | `-l` | `ls -l` | `ls` (already detailed) |
+| List including hidden files | `-a` | `ls -a` | `ls -Force` |
+| Show sizes in KB/MB/GB | `-h` (with `-l`) | `ls -lh` | *(sizes are in bytes)* |
+| Sort by size / by time | `-S` / `-t` (with `-l`) | `ls -lS` / `ls -lt` | `ls \| Sort-Object Length -Descending` |
+| Include folders and everything in them | `-r` | `cp -r a b`, `rm -r folder` | `-Recurse`, e.g. `cp a b -Recurse` |
+| Ask before overwriting or deleting | `-i` | `rm -i f.txt` | `rm f.txt -Confirm` |
+| Explain what it's doing | `-v` | `cp -v a b` | `cp a b -Verbose` |
+| Preview without doing it | tool-specific, often `--dry-run` | `rsync --dry-run …` | `-WhatIf`, e.g. `rm f.txt -WhatIf` |
+| Create missing parent folders | `-p` | `mkdir -p a/b/c` | *(`mkdir` already does)* |
+| Limit to the first N lines | `-n N` | `head -n 5 f.txt` | `Get-Content f.txt -TotalCount 5` |
+
+You don't need to memorise this table. You need to know **that options exist**, and **where to look them up**.
+
+### Asking for help
+
+| Where | How |
+|---|---|
+| The manual page | `man ls` (macOS/Linux). Scroll with space, search with `/`, **quit with `q`**. |
+| A quick summary | `git --help`, `python3 --help` (most installed tools have `--help`). On macOS, the built-in tools like `ls` don't, so use `man`. |
+| PowerShell | `Get-Help ls` |
+| The internet | Copy the error message into a search engine. Everyone does. |
+
+**Reading a usage line.** Help pages start with a short summary. The exact wording differs between systems, but the idea is the same:
+
+```
+usage: head [-n count] [file ...]
+```
+
+- **Square brackets** `[ ]` mean *optional*
+- **`...`** means *you can give more than one*
+- So `head` needs no options, but if you give `-n`, you give it a number
+
+### Wildcards
+
+The shell can match many file names at once:
+
+- `*` stands for *any characters*, `?` for *exactly one character*
+- `ls *.txt` lists all `.txt` files. `mv *.jpg images/` moves all `.jpg` files into `images/`.
+
+### Combining tools
+
+Two ways of combining tools work almost the same on both systems:
+
+| Idea | Symbol | Example (macOS/Linux) | Example (PowerShell) |
+|---|---|---|---|
+| **Redirect** output into a file | `>` (overwrite), `>>` (append) | `ls > list.txt` | same |
+| **Pipe** the output of one tool into the next | `\|` | `ls -l \| head -n 3` | `ls \| Select-Object -First 3` |
+
+### Try it: a tool tour (in the session, ~8 min)
+
+1. Read a manual: `man ls` (Windows: `Get-Help ls`). Find the option that sorts by size. Quit with `q`.
+2. In `dh-sandbox`, compare `ls`, `ls -l`, `ls -la` and `ls -lh` (Windows: `ls` and `ls -Force`).
+3. Check two installed tools: `git --version` and `python3 --version` (Windows: `python --version`). If you get an error, what does it say? (It means the tool isn't installed, or the shell can't find it. See the PATH primer below.)
+4. Use a wildcard inside `notes`: `ls *.txt`.
+5. Use a pipe: `ls -l | head -n 3` (Windows: `ls | Select-Object -First 3`).
+
+### PATH: how the shell finds tools (self-study, ~10 min)
+
+The word "path" has two meanings. You've met **file paths**, meaning where a file is. **`PATH`** (in capitals) is something different: a *list of folders* the shell searches when you type a command name.
+
+**Analogy:** PATH is the list of reading rooms a librarian checks, in order, when you ask for a book. **The first hit wins.** If the book isn't in any of them, you get *"not found"*.
+
+| Goal | macOS / Linux | Windows PowerShell |
+|---|---|---|
+| Show PATH | `echo $PATH` | `$env:Path` |
+| One folder per line | `echo $PATH \| tr ':' '\n'` | `$env:Path -split ';'` |
+| Where does a tool live? | `which ls` | `Get-Command ls` |
+
+**Why it matters later**
+
+- Installers for **Python** (on Windows there is a checkbox *"Add python.exe to PATH"*) and **Git** change PATH so you can type `python` or `git` from anywhere.
+- *"command not found"* right after installing something is very often a PATH problem, or a sign you need to close and reopen the terminal.
+- If two versions of the same tool are installed, the one whose folder comes **first** in PATH is used.
+
+**Questions for your notes:** Which folder comes first in your PATH? Where does `python3` (Windows: `python`) live? If it isn't found, what exactly does the error say?
+
+---
+
+## 6. Wrap-up
+
+- **Rate yourself again** from 1 to 5. Has your number changed?
+- **Finish your Computer Passport.** Keep it with your notes.
+- **Choose your level** for the exercises below. **Nobody is behind.** The levels describe where to start, not how good you are.
+
+---
+
+## Cheat sheet
+
+| I want to… | macOS / Linux | Windows PowerShell |
+|---|---|---|
+| See where I am | `pwd` | `pwd` |
+| List files | `ls` | `ls` |
+| …with details | `ls -l` | `ls` |
+| …including hidden files | `ls -a` | `ls -Force` |
+| Change folder | `cd folder` | `cd folder` |
+| Go up / go home | `cd ..` / `cd ~` | `cd ..` / `cd ~` |
+| Make a folder | `mkdir name` | `mkdir name` |
+| Write text to a file (overwrites!) | `echo "text" > f.txt` | `echo "text" > f.txt` |
+| Append text | `echo "more" >> f.txt` | `echo "more" >> f.txt` |
+| Show a file | `cat f.txt` | `cat f.txt` |
+| Copy | `cp a b` | `cp a b` |
+| Copy a folder | `cp -r a b` | `Copy-Item a b -Recurse` |
+| Move / rename | `mv a b` | `mv a b` |
+| Delete a file (**no undo**) | `rm f.txt` | `rm f.txt` |
+| Delete a folder (**no undo**) | `rm -r folder` | `Remove-Item folder -Recurse` |
+| Open in Finder/Explorer | `open .` | `start .` |
+| Get help | `man ls` | `Get-Help ls` |
+| Check a tool's version | `git --version` | `git --version` |
+| Show PATH | `echo $PATH` | `$env:Path` |
+| Where is a tool? | `which python3` | `Get-Command python` |
+| Clear the screen | `clear` | `clear` |
+| Stop a running command | Ctrl + C | Ctrl + C |
+
+---
+
+# Exercises
+
+The exercises build on each other but you can start at any level. **Everyone should aim to finish Level 1.** If it feels easy, move on.
+
+Keep a file called `lab-notes.txt` in your sandbox and write down what you tried and what happened, in your own words. The Lab is about documented workflows, so this habit will pay off.
+
+**Getting help, in this order:**
+
+1. Read the error message. What does it literally say?
+2. Look at the help (`man`, `--help` or `Get-Help`), or press ↑ to check your typo.
+3. Ask your neighbour.
+4. Ask the instructor.
+
+**Escape hatch:** if you are lost, run `cd ~` to go back home, and `pwd` to see where you are. You haven't broken anything.
+
+## Level 1: Foundations (everyone starts here, ~20 min)
+
+**Goal:** repeat and extend what we did, this time without prompts.
+
+1. Open a terminal and go to your home folder. Run `pwd`, `whoami`, `hostname`, and check that your Passport is complete.
+2. Go into `dh-sandbox`. Create the two folders you haven't made yet: `sources` and `output`.
+3. Create `notes/first-note.txt` with a sentence in it, and read it back with `cat`.
+4. Copy the file into `output`, **rename the copy**, then delete the copy. Check the folder contents after each step.
+5. **Path practice:** from inside `sources`, go to `notes` using a **relative** path (`cd ../notes`). Go back to `sources`. Now go to `notes` again using the **absolute** path (use `pwd` to find it).
+6. **Break something on purpose:** run `cd nonexistent`. Copy the error message into your notes and add one line about what it means.
+7. Create `lab-notes.txt` in `dh-sandbox`. Write three lines about what you did: `>` for the first line, `>>` for the next two. What happens if you use `>` twice?
+
+**I'm done when I can say:**
+
+- [ ] I know where I am in the folder tree at any time
+- [ ] I can explain the difference between `cd notes` and `cd /notes`
+- [ ] I can use Tab and ↑ without thinking about it
+- [ ] I know what `>` and `>>` do
+
+## Level 2: Confident: explore your tools (~35 min)
+
+**Goal:** use the terminal to *find things out*, and get to know the options of a few tools.
+
+1. **PATH:** read the PATH primer (part 5). Print your PATH with one folder per line, and answer the primer's questions in your notes.
+2. **Biggest files:** find the five biggest files in your `Downloads` folder. Which option or tool did you use to sort?
+3. **Read three manuals:** pick three tools you know (`ls`, `cp`, `mkdir`, `cat`…). Read their help. For each, find **one option you didn't know**, try it, and note what it does.
+4. **Safe deleting:** create a test file and delete it with the "ask first" option (`rm -i`, or `-Confirm` in PowerShell). Then try the "preview" option (`-WhatIf` in PowerShell). What difference does it make to how it feels?
+5. **Hidden files:** list all files in your home folder including hidden ones. Pick one hidden file or folder, guess what it is for, then look it up. Read it, but **don't edit it**.
+6. **Tidy a messy folder:** copy the `messy-folder` starter (if provided) into your sandbox, or make one with a handful of `.txt`, `.jpg` and `.pdf` files. Use `mv` with wildcards (`mv *.jpg images/`) to sort files by type. Then write one sentence about when you'd prefer the GUI for this.
+
+**I'm done when I can say:**
+
+- [ ] I can read a help page and find an option I need
+- [ ] I can explain what PATH is and why an installer might change it
+- [ ] I've used a wildcard (`*`)
+
+## Level 3: Stretch: text and pipelines (~40 min)
+
+**Goal:** get a glimpse of why people love the command line: small tools, chained together.
+
+1. **Get a text:** choose a plain-text book from [Project Gutenberg](https://www.gutenberg.org/) (the *Plain Text UTF-8* format) and save it into `sources/`. Either download it in the browser and move it with `mv`, or download it with the terminal. On macOS/Linux use `curl -O <url>`. On Windows use `curl.exe -O <url>`, because plain `curl` in PowerShell is a shortcut for a different command.
+2. **Count:** how many lines and words are in it? (Look for the options of `wc`, or of `Measure-Object`.)
+3. **Search:** pick a word from the text and find all lines that contain it. How many are there?
+4. **Pipe:** chain commands with `|` to show only the first five matching lines.
+5. **Challenge:** list the ten most frequent words in the book.
+6. **Automate the setup:** create a whole project skeleton (`project/sources`, `project/notes`, `project/data`, `project/output`) with a **single command**. Hint: look at the option for *parent folders*.
+7. **Help a Level 1 neighbour** with one step. *Explain, don't type for them.* Teaching is the best test of understanding.
+
+<details>
+
+<summary>Hints and solutions (try first!)</summary>
+
+**Count**
+
+- macOS/Linux: `wc -l book.txt` (lines) and `wc -w book.txt` (words)
+- PowerShell: `Get-Content book.txt | Measure-Object -Line -Word`
+
+**Search**
+
+- macOS/Linux: `grep -i "word" book.txt`, and `grep -c -i "word" book.txt` for a count (it counts *lines*, not occurrences)
+- PowerShell: `Select-String "word" book.txt`, and `(Select-String "word" book.txt).Count`
+
+**Pipe**
+
+- macOS/Linux: `grep -i "word" book.txt | head -n 5`
+- PowerShell: `Select-String "word" book.txt | Select-Object -First 5`
+
+**Top ten words**
+
+- macOS/Linux:
+  ```
+  tr -cs 'A-Za-z' '\n' POINTY-BRACKET-LEFT book.txt | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | head
+  ```
+- PowerShell:
+  ```
+  Get-Content book.txt | ForEach-Object { $_ -split '\W+' } | Where-Object { $_ } | Group-Object | Sort-Object Count -Descending | Select-Object -First 10
+  ```
+- Think about the result: what kinds of words come out on top? (Mostly function words. You will meet this again when we talk about text analysis.)
+
+**One-command project skeleton**
+
+- bash/zsh: `mkdir -p project/{sources,notes,data,output}`
+- PowerShell: `"sources","notes","data","output" | ForEach-Object { mkdir project/$_ }`
+
+**Level 2: biggest files**
+
+- macOS/Linux: `ls -lhS ~/Downloads | head -n 6`
+- PowerShell: `ls ~/Downloads | Sort-Object Length -Descending | Select-Object -First 5`
+
+**Level 2: PATH one per line**
+
+- macOS/Linux: `echo $PATH | tr ':' '\n'`
+- PowerShell: `$env:Path -split ';'`
+
+**Level 2: hidden files**
+
+- macOS/Linux: `ls -a ~`
+- PowerShell: `ls ~ -Force`
+
+</details>
+
+## Reflection (5 min, everyone)
+
+Add five lines to `lab-notes.txt`:
+
+- What worked?
+- What error message did you meet, and what did it mean?
+- What is one thing you'd like to try next?
+- Would you use the terminal or the GUI for the task you did today, and why?
+- Where are you on the 1–5 scale now?
+
+---
+
+## If something goes wrong
+
+| What you see | Probably | What to try |
+|---|---|---|
+| `command not found` / *not recognized* | A typo, or the tool isn't installed or isn't on PATH | Check spelling. Try `which` / `Get-Command`. If you just installed something, close and reopen the terminal. |
+| The terminal seems frozen | A command is still running, or you're inside a manual page | **Ctrl + C**, or press **q** |
+| *No such file or directory* | Wrong folder, a typo, or a leading slash | `pwd`, `ls`, check spelling, use **Tab** |
+| A path with spaces fails | The shell splits the path at each space | Put the path in quotes, or use **Tab** |
+| `>` erased my file | `>` overwrites | Use `>>` to append |
+| `python` opens the Microsoft Store (Windows) | Python isn't installed | Fine for today. It comes back in the Python course. |
+| Prompt starts with `C:\>` (Windows) | Old Command Prompt | Open *Terminal* or *PowerShell* instead |
+| Your Desktop path contains `OneDrive` (Windows) or iCloud (macOS) | Cloud folder redirect | It's normal. Put your sandbox in your home folder. |
+| A command asks for a password and shows nothing while you type | `sudo` / administrator prompt | Avoid `sudo` today. Ask an instructor. |
+
+---
 
 ::: {.callout-tip title="In parallel in the Intro"}
 [What is DH? · What is data? · Zotero
 introduction](https://dhbern.github.io/introduction-to-dh/contents/sessions/02.html)
 :::
+
+## Further resources
+
+- [The Programming Historian: Introduction to the Bash Command Line](https://programminghistorian.org/en/lessons/intro-to-bash)
+- [The Programming Historian: Introduction to PowerShell](https://programminghistorian.org/en/lessons/intro-to-powershell)
+- [Software Carpentry: The Unix Shell](https://swcarpentry.github.io/shell-novice/): the standard beginner lesson, with exercises
+- [The Missing Semester of Your CS Education (MIT)](https://missing.csail.mit.edu/): for those who want to go further
+- [RFC 1178: Choosing a Name for Your Computer](https://www.rfc-editor.org/rfc/rfc1178)
