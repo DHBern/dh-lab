@@ -1,6 +1,6 @@
 ---
 title: "Session 5"
-subtitle: "Linked Open Data in action: reusing and connecting information"
+subtitle: "From Linked Open Data to RiC-O, LRM and CIDOC-CRM"
 author:
   - name: Stephen Hart
     orcid: 0009-0003-6556-5512
