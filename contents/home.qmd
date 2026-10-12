@@ -113,7 +113,7 @@ morning and the tool in the afternoon reinforce each other week by week.
 | 2 | 22 Sep | [Get to know your computer](/contents/sessions/02.qmd) [Demleitner]{.teach .teach-demleitner} | What is DH? · What is data? [Hodel]{.teach .teach-hodel} |
 | 3 | 29 Sep | [Get to know useful stuff](/contents/sessions/03.qmd) [Hodel]{.teach .teach-hodel} | Forms of data and metadata [Hodel]{.teach .teach-hodel} |
 | 4 | 06 Oct | [Replacing Excel with SQLite](/contents/sessions/04.qmd) [Beretta]{.teach .teach-beretta} | Data structures [Beretta]{.teach .teach-beretta} |
-| 5 | 13 Oct | [From LOD to RiC-O, LRM and CIDOC-CRM](/contents/sessions/05.qmd) [Hart]{.teach .teach-hart} | Linked Open Data [Beretta]{.teach .teach-beretta} |
+| 5 | 13 Oct | [Linked Open Data in action](/contents/sessions/05.qmd) [Beretta]{.teach .teach-beretta} | Linked Open Data [Beretta]{.teach .teach-beretta} |
 | 6 | 20 Oct | [Introduction to APIs](/contents/sessions/06.qmd) [Hodel]{.teach .teach-hodel} | The web as interface [Hodel]{.teach .teach-hodel} |
 | 7 | 27 Oct | [Scholarly editing as data publication (TEI)](/contents/sessions/07.qmd) [Spadini]{.teach .teach-spadini} | Data modelling: editions [Spadini]{.teach .teach-spadini} |
 | 8 | 03 Nov | [Introduction to Omeka](/contents/sessions/08.qmd) [Hodel]{.teach .teach-hodel} | Data analysis: networks [Hodel]{.teach .teach-hodel} |

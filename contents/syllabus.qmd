@@ -57,9 +57,9 @@ Data modelling in practice: [draw.io](https://app.diagrams.net/) · [SQLite](htt
 
 ### [Session 5](/contents/sessions/05.qmd) (13 October 2026)
 
-**Linked Open Data in action: reusing and connecting information** [Hart]{.teach .teach-hart}
+**Linked Open Data in action: reusing and connecting information** [Beretta]{.teach .teach-beretta}
 
-The formal ontologies of archives, libraries and museums.
+Querying and editing research data.
 
 *In the Intro:* [Data modelling: Linked Open Data](https://dhbern.github.io/introduction-to-dh/contents/sessions/05.html)
 
