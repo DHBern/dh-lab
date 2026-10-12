@@ -41,15 +41,14 @@ it.
 
 ORCID: [0000-0002-4389-4126](https://orcid.org/0000-0002-4389-4126)
 
-Leads **Session 4** in both courses (*Data structures* and the SQLite lab) and **Session 5** in
-the Intro (*Data modelling: Linked Open Data*).
+Leads **Sessions 4 and 5** in both courses: *Data structures* with the SQLite lab, and *Data
+modelling: Linked Open Data* with the lab on querying and editing research data.
 
 ### Guest sessions in the Lab
 
 | Lab session | Topic | Taught by |
 |:--|:--|:--|
 | [2](/contents/sessions/02.qmd) | Get to know your computer | [Demleitner]{.teach .teach-demleitner} Adrian Demleitner ([ORCID](https://orcid.org/0000-0001-9918-7300)), possibly with further colleagues |
-| [5](/contents/sessions/05.qmd) | From LOD to RiC-O, LRM and CIDOC-CRM | [Hart]{.teach .teach-hart} Stephen Hart ([ORCID](https://orcid.org/0009-0003-6556-5512)) |
 | [10](/contents/sessions/10.qmd) | Data cleaning and connecting: OpenRefine | [Demleitner]{.teach .teach-demleitner} Adrian Demleitner ([ORCID](https://orcid.org/0000-0001-9918-7300)) |
 | [12](/contents/sessions/12.qmd) | GenAI in action: multimodal LLMs | [Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler ([ORCID](https://orcid.org/0000-0003-4229-8688)) |
 

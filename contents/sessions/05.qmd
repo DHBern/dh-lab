@@ -10,8 +10,8 @@ date-modified: last-modified
 lang: en-GB
 ---
 
-::: {.session-teacher .st-hart}
-[Beretta]{.teach .teach-hart} Taught by **Francesco Beretta**.
+::: {.session-teacher .st-beretta}
+[Beretta]{.teach .teach-beretta} Taught by **Francesco Beretta**.
 :::
 
 ## In this session
