@@ -37,12 +37,6 @@
 	border-color: #bfe3cb;
 }
 
-.teach-hart {
-	background: #fdf0d9;
-	color: #8a5100;
-	border-color: #f3dcb0;
-}
-
 .teach-demleitner {
 	background: #ece7fa;
 	color: #4a2d94;
@@ -113,9 +107,6 @@ table td {
 }
 .st-beretta {
 	border-left-color: #1c6435;
-}
-.st-hart {
-	border-left-color: #8a5100;
 }
 .st-demleitner {
 	border-left-color: #4a2d94;

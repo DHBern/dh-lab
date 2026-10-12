@@ -15,7 +15,6 @@ coloured badge showing who leads which session.
 [Hodel]{.teach .teach-hodel} Tobias Hodel
 [Spadini]{.teach .teach-spadini} Elena Spadini
 [Beretta]{.teach .teach-beretta} Francesco Beretta
-[Hart]{.teach .teach-hart} Stephen Hart
 [Demleitner]{.teach .teach-demleitner} Adrian Demleitner
 [Prada Ziegler]{.teach .teach-prada} Ismail Prada Ziegler
 [Course team]{.teach .teach-team} all three convenors
