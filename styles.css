@@ -124,3 +124,28 @@ table td {
 	max-height: 36px;
 	margin-right: 0.5rem;
 }
+
+/**
+ * Programme tables on small screens
+ *
+ * The weekly programme is four columns wide. At 375px it needs more room than
+ * the text column has, so it hangs over the edge and its words break badly
+ * ("introduction|s,"). Smaller cells with tighter side padding bring it back
+ * inside the column; `overflow-x` is the fallback for anything still wider, so
+ * a table scrolls on its own rather than taking the whole page with it.
+ */
+
+@media (max-width: 767.98px) {
+	main.content table {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		font-size: 0.85rem;
+	}
+
+	main.content table :is(td, th) {
+		padding-left: 0.35rem;
+		padding-right: 0.35rem;
+	}
+}
