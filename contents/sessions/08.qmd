@@ -96,22 +96,6 @@ The DH Bern instance is **Omeka S**, offered to all members of the University of
 
 The most important idea in Omeka S: **your data and your website are separate things.**
 
-```{mermaid}
-flowchart LR
-  subgraph Data["Your data (the pool)"]
-    IS[Item set] --> I[Item]
-    I --> M[Media]
-    T[Resource template] -. constrains .-> I
-    V[Vocabulary: dcterms, foaf, ...] -. provides properties .-> T
-  end
-  subgraph Presentation["Presentation"]
-    S[Site] --> P[Pages with blocks]
-    S --> TH[Theme]
-  end
-  I -. displayed on .-> S
-  IS -. displayed on .-> S
-```
-
 | Term | What it is | Example |
 |---|---|---|
 | **Item** | The thing you describe | A postcard |
