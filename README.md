@@ -4,8 +4,8 @@ Course website for the **DH Lab**, the hands-on companion to
 [Introduction to Digital Humanities](https://dhbern.github.io/introduction-to-dh/) at the
 University of Bern (Walter Benjamin Kolleg / Digital Humanities).
 
-Co-taught by Tobias Hodel, Elena Spadini and Francesco Beretta, with guest sessions by Stephen
-Hart, Adrian Demleitner and Ismail Prada Ziegler.
+Co-taught by Tobias Hodel, Elena Spadini and Francesco Beretta, with guest sessions by Adrian
+Demleitner and Ismail Prada Ziegler.
 
 🌐 <https://dhbern.github.io/dh-lab/>
 

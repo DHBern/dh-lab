@@ -16,55 +16,65 @@ lang: en-GB
 
 ## In this session
 
--   Why a spreadsheet is a bad database
--   Conceptual modelling, in practice: **[draw.io](https://app.diagrams.net/)** and
-    **[QuickDBD](https://app.quickdatabasediagrams.com/)**
--   **[SQLite](https://www.sqlite.org/)**: building and querying an actual database
+- Why a spreadsheet is not a database
+- Conceptual modelling in practice: [**draw.io**](https://app.diagrams.net/) (as VSCode extension: Draw.io Integration by Henning Dieterichs)
+- [**SQLite**](https://www.sqlite.org/): building and querying an actual database, working with [**DBeaver**](https://dbeaver.io/)
 
 ## Why not Excel
 
-Spreadsheets are excellent for arithmetic and poor for data. The failure modes are specific and
-they all bite in humanities projects:
+Spreadsheets are excellent for statistics and data analysis, but poor for data production and management:
 
--   No constraints: a date column that contains "um 1480", "1480?" and "ca. 1480" and a
-    typo
--   No relations: the same person entered fifteen times, spelled twelve ways
--   Formatting as information — a yellow cell that means something only to you
--   Silent coercion: identifiers turned into numbers, dates turned into other dates
--   No history: you cannot tell what changed, or when, or why
+- no identifiers for rows, no real rows: you can sort just one column and destroy all your work in a second (only a backup will save you)
+- no relations: the same person entered fifteen times, spelled five different ways
+- formatting as information — a yellow cell that means something only to you
+- silent format coercion: identifiers turned into numbers, dates turned into other dates
 
-## Conceptual modelling, in practice
+## Create your first information system in the form of a SQLite database
 
-Continuing directly from [the Intro's data-structures
-session](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html):
+Continuing from [the Intro's data-modelling session](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html)
 
--   Entities, attributes, relations — now drawn precisely
--   Cardinality: one-to-one, one-to-many, many-to-many
--   Primary and foreign keys
--   Normalisation, far enough to be useful and no further
--   **draw.io** for the conceptual diagram, **QuickDBD** for turning a sketch into a schema
+### Exercice 1. Explore the Chinook database
+
+- Cf. [these slides](https://github.com/Sciences-historiques-numeriques/information-systems/blob/main/slides/Beretta-Conceptual-Modelling-and-Research-Cycle-1-0.pdf) from the morning session.
+- We will first explore the Chinook database:
+  - Create a dedicated directory for this exercise.
+  - Download and open the [database conceptual model](https://github.com/Sciences-historiques-numeriques/information-systems/tree/main/chinook-database/documentation) with the VSCode Drawio plugin.
+  - Download the database and open it with DBeaver.
+
+Basic concepts:
+
+- Entities, attributes, relations
+- Cardinality: one-to-one, one-to-many, many-to-many
+- Primary and foreign keys
+- [Normalisation](https://en.wikipedia.org/wiki/Database_normalization#Normal_forms), far enough to be useful and no further
+
+### Exercice 2. Conceptualise some features of a population (prosopography)
+
+The envisaged analysis:
+
+- map the birthplaces of your population and their development over time.
+- analyse teacher-student relationships using social network analysis.
+- analyse networks of organisations through memberships at different times.
+
+
+&nbsp;
+
+- This [GitHub repository](https://github.com/Sciences-historiques-numeriques/astronomers/blob/main/documentation/Home.md) will be first presented.
+
+- Then you can fork it, and reuse the conceptual model and database in view of producing your own one in this Lab session.
+
+
 
 ## SQLite
 
--   A whole relational database in a single file, with no server
--   [DB Browser for SQLite](https://sqlitebrowser.org/) as the graphical way in
--   `CREATE TABLE`, data types, `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`
--   `INSERT`, `SELECT`, `WHERE`, `ORDER BY`
--   `JOIN` — the reason the whole exercise is worth it
--   `GROUP BY` and aggregates
--   Importing a CSV, and exporting back out again
-
-## Exercise
-
-Take the articles-and-authors model from the Intro and build it for real:
-
-1.  Draw the schema
-2.  Create the tables in SQLite
-3.  Import your Zotero export
-4.  Write queries that a spreadsheet could not answer — "which authors publish together", "how
-    many items per decade per journal"
+- A whole relational database in a single file, with no server: [SQLite Tutorial](https://www.sqlitetutorial.net/)
+- [**DBeaver**](https://dbeaver.io/) as the graphical way to manage the database
+- `CREATE TABLE`, data types, `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`
+- `INSERT`, `SELECT`, `WHERE`, `ORDER BY`
+- `JOIN` — the reason the whole exercise is worth it
+- `GROUP BY` and aggregates
+- Importing a CSV, and exporting back out again
 
 ::: {.callout-tip title="In parallel in the Intro"}
-[Data structures: conceptual modelling, Dublin Core,
-METS](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html)
+[Data structures: building information systems for research](https://dhbern.github.io/introduction-to-dh/contents/sessions/04.html)
 :::
