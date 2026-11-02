@@ -149,3 +149,8 @@ table td {
 		padding-right: 0.35rem;
 	}
 }
+
+/* mermaid override */
+#mermaid-1 .cluster rect {
+    fill: #ffffde;
+}

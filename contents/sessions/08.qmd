@@ -51,17 +51,17 @@ By the end of the workshop you will be able to:
 
 ### Schedule
 
-| Time | Block | What happens |
-|---|---|---|
-| 0:00 | Welcome | Goals, accounts, picking your object |
-| 0:08 | Omeka in 12 minutes | Concepts and a tour of the admin interface |
-| 0:20 | **Part 1** — Describe an object | Create an item, add media, fill in Dublin Core |
-| 0:50 | Break | 5 minutes |
-| 0:55 | **Part 2** — Standards in practice | Resource template, controlled vocabularies, links |
-| 1:15 | **Part 3** — Presenting a collection | Site, theme, navigation, pages |
-| 1:30 | **Part 4** — The API | Browse the JSON in your browser, query it, how CSV import works |
-| 1:45 | **Part 5** — What to use when | Comparison and discussion |
-| 1:55 | Wrap-up | Take-aways and questions |
+| Block | What happens |
+|---|---|
+| Welcome | Goals, accounts, picking your object |
+| Omeka in 12 minutes | Concepts and a tour of the admin interface |
+| **Part 1** — Describe an object | Create an item, add media, fill in Dublin Core |
+| Break | 5 minutes |
+| **Part 2** — Standards in practice | Resource template, controlled vocabularies, links |
+| **Part 3** — Presenting a collection | Site, theme, navigation, pages |
+| **Part 4** — The API | Browse the JSON in your browser, query it, how CSV import works |
+| **Part 5** — What to use when | Comparison and discussion |
+| Wrap-up | Take-aways and questions |
 
 ### Before you start
 
