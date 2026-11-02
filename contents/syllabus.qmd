@@ -106,7 +106,7 @@ editions](https://dhbern.github.io/introduction-to-dh/contents/sessions/07.html)
 
 ### [Session 8](/contents/sessions/08.qmd) (3 November 2026)
 
-**Introduction to Omeka** [Hodel]{.teach .teach-hodel}
+**Introduction to Omeka** [Demleitner]{.teach .teach-demleitner}
 
 Data standards · controlled vocabularies · the API · what to use when: GitHub Pages or Omeka.
 

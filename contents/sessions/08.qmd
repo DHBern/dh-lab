@@ -2,72 +2,541 @@
 title: "Session 8"
 subtitle: "Introduction to Omeka"
 author:
-  - name: Tobias Hodel
+  - name: Adrian Demleitner
     orcid: 0000-0002-2071-6407
-    email: tobias.hodel@unibe.ch
+    email: adrian.demleitner@unibe.ch
     affiliations:
       - Walter Benjamin Kolleg / Digital Humanities, University of Bern
     role: author
 date: 2026-11-03
 date-modified: last-modified
 lang: en-GB
+toc: true
+toc-depth: 2
 ---
 
-::: {.session-teacher .st-hodel}
-[Hodel]{.teach .teach-hodel} Taught by **Tobias Hodel**.
+Taught by **Adrian Demleitner**.
+
+::: {.callout-important}
+## Final-year meeting (II) — 16:00
+Students in their final year report on the status of their projects.
+:::
+
+::: {.callout-tip}
+## In parallel in the Intro
+[Data analysis: networks](https://dhbern.github.io/introduction-to-dh/contents/sessions/08.html)
 :::
 
 ## In this session
 
--   **[Omeka](https://omeka.org/)**: publishing a collection
--   Data standards and controlled vocabularies in practice
--   The Omeka **API**
--   **What to use when**: GitHub Pages or Omeka?
+Over the last sessions you have published text-led work with GitHub Pages. Today you meet the other big option for publishing research material: **Omeka S**, a platform built around *objects* and their *metadata*.
 
-## Omeka
+We work hands-on in the DH Bern Omeka S instance: <https://omeka.unibe.ch/v4>
 
--   Omeka Classic and Omeka S — what the difference actually means for you
--   Items, item sets, media, sites
--   Templates and exhibits: presenting a collection as an argument
--   Users and permissions, for projects with more than one person
+::: {.callout-important appearance="simple"}
+## Five keywords to take home
+**Objects · Metadata · Links · Curation · Exit**
 
-## Data standards
+Each part of the workshop adds one of them. They are meant for later, when you have to evaluate a tool or plan a tool-chain: *is my project object-led? does metadata structure matter? do I need to link out? what is the argument? how do I get out again?*
+:::
 
-Omeka is built on Dublin Core, which makes the abstractions from the Intro concrete:
+By the end of the workshop you will be able to:
 
--   Filling in the fifteen elements for a real object — and noticing which ones fight you
--   Resource templates: constraining what may be entered, and why constraint helps
--   **Controlled vocabularies**: attaching values from GND, Getty AAT, GeoNames or Wikidata
-    instead of typing strings
--   Linking items to each other, and to the outside world
+1. **Explain** what Omeka S is, and how items, item sets, media, sites and pages relate to each other.
+2. **Describe** a real object with Dublin Core properties, and say which properties were hard to fill in, and why.
+3. **Use** a resource template and linked, controlled values (GND, GeoNames, Getty AAT, Wikidata) instead of free-text strings.
+4. **Build** a small site that presents a handful of items as an argument.
+5. **Read** data from the Omeka API in your browser, and explain how a bulk CSV import works.
+6. **Decide** between GitHub Pages and Omeka for a given project, and justify the decision with the five keywords.
 
-## The API
+### Schedule
 
--   The Omeka S REST API: reading and writing items
--   Bulk import from CSV
--   Getting your data back *out* — the test of any publication platform
+| Time | Block | What happens |
+|---|---|---|
+| 0:00 | Welcome | Goals, accounts, picking your object |
+| 0:08 | Omeka in 12 minutes | Concepts and a tour of the admin interface |
+| 0:20 | **Part 1** — Describe an object | Create an item, add media, fill in Dublin Core |
+| 0:50 | Break | 5 minutes |
+| 0:55 | **Part 2** — Standards in practice | Resource template, controlled vocabularies, links |
+| 1:15 | **Part 3** — Presenting a collection | Site, theme, navigation, pages |
+| 1:30 | **Part 4** — The API | Browse the JSON in your browser, query it, how CSV import works |
+| 1:45 | **Part 5** — What to use when | Comparison and discussion |
+| 1:55 | Wrap-up | Take-aways and questions |
 
-## What to use when
+### Before you start
+
+- [ ] You can log in at <https://omeka.unibe.ch/v4/admin> (Uni Bern account or the login you received).
+- [ ] You have **one object** to describe. Either bring your own (a photograph, a book page, an artefact, a postcard, a map...) or pick one from the object pack that is shared in the session.
+- [ ] You have an **image file** of that object on your laptop, or a link to one. Make sure you are allowed to upload it: public domain, your own photo, or an openly licensed image.
+- [ ] You have a browser. Firefox has a built-in JSON viewer; in Chrome a JSON viewer extension helps. **No programming is needed today.**
+
+::: {.callout-note}
+The interface of Omeka S changes slightly between versions and between installations. Menu names below are the ones you should expect; if something looks different, ask, and we'll note it down for the next time this page is revised.
+:::
+
+---
+
+## Omeka {#omeka}
+
+### Classic or S?
+
+Omeka comes in two versions that share a name and a philosophy, but are different software.
+
+| | Omeka Classic | Omeka S |
+|---|---|---|
+| Typical use | One project, one site | Many sites on one installation |
+| Data | Belongs to one site | Lives in a shared pool; sites *display* parts of it |
+| Vocabularies | Dublin Core, plus item types | Dublin Core by default; further vocabularies (FOAF, BIBO, ...) can be added |
+| Linked data | Limited | Built in: properties are URIs, values can be links |
+| Fit for | A small exhibit, teaching | An institution hosting many projects, such as a university |
+
+The DH Bern instance is **Omeka S**, offered to all members of the University of Bern. You can see what others have built on the [welcome page](https://omeka.unibe.ch/v4/s/omeka/page/welcome): from pastry moulds to book reviews by Albrecht von Haller. Have a look at two or three of these before we start, and ask yourself: *what is the collection arguing?*
+
+### The data model
+
+The most important idea in Omeka S: **your data and your website are separate things.**
+
+```{mermaid}
+flowchart LR
+  subgraph Data["Your data (the pool)"]
+    IS[Item set] --> I[Item]
+    I --> M[Media]
+    T[Resource template] -. constrains .-> I
+    V[Vocabulary: dcterms, foaf, ...] -. provides properties .-> T
+  end
+  subgraph Presentation["Presentation"]
+    S[Site] --> P[Pages with blocks]
+    S --> TH[Theme]
+  end
+  I -. displayed on .-> S
+  IS -. displayed on .-> S
+```
+
+| Term | What it is | Example |
+|---|---|---|
+| **Item** | The thing you describe | A postcard |
+| **Media** | The files attached to an item | The scan of the front and back |
+| **Item set** | A named group of items (an item can be in several) | "Postcards of Bern" |
+| **Property** | A single field from a vocabulary | `dcterms:creator` |
+| **Vocabulary** | A set of properties with agreed meanings | Dublin Core Terms |
+| **Resource class** | The *type* of thing an item is | `bibo:Image`, `dctype:PhysicalObject` |
+| **Resource template** | A form: which properties, in which order, required or not, which data type | "Historical postcard" |
+| **Site** | A public website built from items | "Bern around 1900" |
+| **Page / block** | Content on a site; blocks display items, text, media | A "Browse preview" block |
+| **User / role** | A person with permissions | Researcher, Editor, Site admin |
+
+::: {.callout-tip}
+## Why this separation matters
+Because the data is separate from the site, one item can appear on several sites, and you can redesign the site without touching the data. It also means that the *quality of your data* is something you can work on independently of how it looks.
+:::
+
+::: {.callout-note appearance="simple"}
+## Keyword: Objects
+Omeka starts from **things** (items and their media) and their descriptions. GitHub Pages starts from **text and argument**. If your project is a collection of objects, Omeka is a candidate.
+
+Two sub-keywords for the same idea: **Data ≠ display** (items live in a pool, sites only show them) and **Shared pool** (one installation serves many projects, which suits an institution better than a single small project).
+:::
+
+### Users and permissions
+
+For projects with more than one person, Omeka S has roles. The details are in the [user manual](https://omeka.org/s/docs/user-manual/); the short version is that roles range from people who can only see their own items to people who can administer everything. Think about who needs which role *before* you invite your team, not after the first accidental deletion.
+
+---
+
+## Part 1: Describe an object {#part-1}
+
+**Goal:** create one well-described item with an image, and notice where describing things gets difficult.
+
+**Time:** about 30 minutes.
+
+### 1.1 Create your own item set
+
+1. In the admin sidebar open **Item sets** and click **Add new item set**.
+2. Give it the title `DH Lab 2026 – <your name>`.
+3. Save.
+
+### 1.2 Create an item
+
+1. Open **Items** → **Add new item**.
+2. Leave the resource template empty for now. We'll add one in Part 2.
+3. Add the following properties. In Omeka S you click the **+** next to a property in the right-hand list (or search for it) to add a field.
+
+| Property | What to enter |
+|---|---|
+| Title (`dcterms:title`) | A short, human-readable name |
+| Description (`dcterms:description`) | Two or three sentences: what is this, what can we see? |
+| Creator (`dcterms:creator`) | Who made it, if known |
+| Date (`dcterms:date`) | When it was made, as `YYYY`, `YYYY-MM` or `YYYY-MM-DD` |
+| Type (`dcterms:type`) | What kind of thing it is |
+| Format (`dcterms:format`) | The medium or the file format |
+| Identifier (`dcterms:identifier`) | A shelfmark, inventory number or URL |
+| Source (`dcterms:source`) | Where it comes from: archive, library, collection |
+| Rights (`dcterms:rights`) | Who owns it, and what you may do with it |
+
+4. Under **Media**, upload your image (or add it by URL).
+5. In the right-hand sidebar select **your item set**.
+6. Click **Save**, then view the public page of the item.
+
+### 1.3 The fifteen elements, and where they fight you
+
+The classic Dublin Core "simple" set has fifteen elements. Omeka S offers many more (the full *DCMI Terms*), but the original fifteen are where most people start, and where most people get stuck.
+
+| Element | Common trap |
+|---|---|
+| **Title** | Is it the title the object *has*, or one you made up? Say which. |
+| **Creator** | Is the person who made it the same as the person who *took the photograph* of it? Often not. |
+| **Subject** | Free words or a controlled vocabulary? Free words are hard to search consistently. |
+| **Description** | Describe the object, not your interpretation of it. |
+| **Publisher** | Often confused with *who holds it* or *who put it online*. |
+| **Contributor** | Everyone else. Where does "creator" end and "contributor" begin? |
+| **Date** | Date of creation, of publication, of digitisation? Uncertain or approximate dates? |
+| **Type** | Image, text, physical object? What if it is all of them? |
+| **Format** | The original medium, or the digital file? |
+| **Identifier** | Which one: the archive's, yours, the URL? |
+| **Source** | The thing this one was derived from, or the place you found it? |
+| **Language** | One value per language, using a code such as `de`, `fr` or `la`. |
+| **Relation** | Related *how*? Dublin Core has more specific relations; use them. |
+| **Coverage** | Place, time period, or both? |
+| **Rights** | A sentence, or a link to a licence? A link is better. |
+
+::: {.callout-note collapse="true"}
+## Checkpoint: what a good record looks like
+Your item should have a title, a description, a date in a consistent format, an identifier, a source and a rights statement, **and** an image. Open the public page. If you were a stranger finding it in a search, could you tell what it is, where it came from, and whether you may reuse it?
+:::
+
+### Reflect
+
+Write down (a note on your laptop is fine) **two elements that were hard to fill in** and why. We will collect them in the room.
+
+::: {.callout-note appearance="simple"}
+## Keyword: Metadata
+In Omeka the **description of the object is the data**. Every decision you just struggled with (creator or contributor? which date?) is a modelling decision that later users inherit. If metadata structure matters to your argument, you need a tool that takes it seriously.
+:::
+
+---
+
+## Data standards {#data-standards}
+
+### Part 2: Standards in practice {#part-2}
+
+**Goal:** make your record *more consistent*, by constraining what may be entered, and *more connected*, by linking to external authorities.
+
+**Time:** about 20 minutes.
+
+### 2.1 Why free text is not enough
+
+Compare three ways a database might record the same place:
+
+- `Bern`
+- `Berne`
+- `Bärn`
+
+To a human they are the same city. To a computer they are three strings. A search for "Bern" misses two thirds of your data.
+
+Now compare with identifiers: Bern is `https://www.wikidata.org/entity/Q70` in Wikidata and `https://www.geonames.org/2661552` in GeoNames. Whatever spelling you use on screen, the identifier is the same, and it carries you to everything else known about the city.
+
+::: {.callout-important}
+**This is the point of controlled vocabularies.** You do not type a *name*. You *select an entity* from an authority and store its identifier.
+:::
+
+### 2.2 A resource template
+
+A resource template is a form that you design. It decides which properties appear, in which order, whether they are required, and what kind of value they accept.
+
+1. Go to **Resource templates** → **Add new resource template**.
+2. Call it `DH Lab – <your name>`.
+3. Choose a **resource class** that fits your object (for example `dctype:PhysicalObject` or `bibo:Image`).
+4. Add the properties from Part 1.
+5. For each property decide:
+   - **Required?** At least Title and Rights.
+   - **Alternate label**: a clearer name for your project, e.g. "Photographer" instead of "Creator".
+   - **Alternate comment**: a one-line instruction for whoever fills it in.
+   - **Data types**: *Text*, *URI*, *Item link*, or a vocabulary lookup (see below).
+6. Save.
+
+Now open your item from Part 1, select your new template in the **Resource template** dropdown, and let Omeka reshape the form.
+
+::: {.callout-tip}
+## Keyword: Constrain
+Constraint is a gift.
+A template feels like bureaucracy. In practice it is the thing that makes the fiftieth record look like the first, and it is what lets someone else take over your project.
+:::
+
+### 2.3 Controlled vocabularies and linked values
+
+Depending on which modules are installed, your data type menu may offer lookups against external authorities. Typical ones:
+
+| Authority | Good for |
+|---|---|
+| **GND** (Gemeinsame Normdatei) | people, organisations, places, works, German-language context |
+| **GeoNames** | places |
+| **Getty AAT** (Art & Architecture Thesaurus) | object types, materials, techniques |
+| **Wikidata** | almost anything; an excellent connector between authorities |
+
+Try this on your item:
+
+1. Set the data type of **Creator** to a person lookup (GND or Wikidata) and search for the maker of your object.
+2. Set **Coverage** or a place property to **GeoNames** and search for where it was made.
+3. Set **Type** or **Format** to **Getty AAT**.
+4. Pick one result for each. Notice that Omeka stores both a label *and* a URI.
+
+If the lookups aren't available in your menu, use the **URI** data type and paste the authority's URL by hand, for example from [Wikidata](https://www.wikidata.org/), [GeoNames](https://www.geonames.org/) or the [Getty vocabularies](https://vocab.getty.edu/aat/).
+
+### 2.4 Linking items to each other
+
+1. Create a **second item** in your item set (a related object, a person, a place, a document; keep it short).
+2. Open your first item and add **Relation** (`dcterms:relation`) with the data type **Item**.
+3. Search for the second item and select it.
+4. Save and look at the public page of both items. The link appears on both.
+
+::: {.callout-note collapse="true"}
+## Checkpoint
+- Your first item uses a resource template.
+- At least **one value is an identifier** from an external authority.
+- Your two items point at each other.
+:::
+
+::: {.callout-note appearance="simple"}
+## Keyword: Links
+Identifiers instead of strings (GND, GeoNames, Getty AAT, Wikidata) and links between items turn a private database into **linked data**: others can find, connect and reuse your records. If you need to link out to authorities, check that your tool can store identifiers, not just text.
+:::
+
+---
+
+## Part 3: Presenting a collection {#part-3}
+
+**Goal:** a collection becomes an argument as soon as you decide what to show, in which order, and with which words.
+
+**Time:** about 15 minutes.
+
+### 3.1 Create a site
+
+1. Open **Sites** → **Add new site**.
+2. Title: `DH Lab 2026 – <your name>`. Choose a **URL slug**; it becomes part of the address.
+3. Choose a **theme**. Don't spend time deciding; you can change it any time without losing data.
+4. Save.
+
+### 3.2 Connect your data
+
+Your site does not own your items; it *displays* them. Tell the site which items to display:
+
+1. Open the site → **Settings**.
+2. Add **your item set** to the site's item sets / item pool.
+3. Save, and open the public site. Under *Browse* you should now see your items.
+
+### 3.3 Write a page
+
+1. In the site, open **Pages** → **Add new page**.
+2. Title it, for instance "About this collection".
+3. Add blocks. Useful ones:
+   - **HTML** or **Text** for your own writing
+   - **Item showcase** to pick specific items with captions
+   - **Browse preview** to display a live selection
+4. Add the page to the site's **Navigation**.
+
+### 3.4 Make it argue something
+
+Write **three sentences** on the page answering: *What claim does this small collection make? What is the viewer meant to notice? What did you leave out, and why?* Choose which item you put first.
+
+::: {.callout-note collapse="true"}
+## Checkpoint
+Your site has a title, a navigation entry, a page with your three sentences, and at least two items visible. Send the URL of your site to the person next to you and ask them what they think the collection is about.
+:::
+
+::: {.callout-note appearance="simple"}
+## Keyword: Curation
+A site is where a collection becomes an **argument**: what you show, in which order, with which words, and what you leave out. Omeka gives you structure for objects; it does not give you the argument. That remains your job.
+:::
+
+---
+
+## The API {#the-api}
+
+### Part 4: Getting data out {#part-4}
+
+**Goal:** understand that Omeka is not a closed box. Everything you entered is available as structured data. That is also the test of any publication platform: *can I get my data back out?*
+
+**Time:** about 15 minutes.
+
+### 4.1 Read the API in your browser
+
+Public data is readable without any login. Open these URLs in your browser (a JSON viewer extension helps, but isn't required):
+
+- All items (first page): <https://omeka.unibe.ch/v4/api/items>
+- All item sets: <https://omeka.unibe.ch/v4/api/item_sets>
+- All properties: <https://omeka.unibe.ch/v4/api/properties>
+- All sites: <https://omeka.unibe.ch/v4/api/sites>
+
+Find your own item. Its ID is the number in the admin URL (`/admin/item/123`). Then open:
+
+```
+https://omeka.unibe.ch/v4/api/items/<your item id>
+```
+
+Look at what comes back. The format is **JSON-LD**: every property is keyed by its vocabulary term (`dcterms:title`), values carry a type (`literal` or `uri`), and URIs from Part 2 are stored as real links.
+
+### 4.2 Query it
+
+Add parameters to the URL, separated by `?` and `&`:
+
+| Goal | URL |
+|---|---|
+| 5 items per page | `/api/items?per_page=5` |
+| Page 2 | `/api/items?per_page=5&page=2` |
+| Only your item set | `/api/items?item_set_id=<ID>` |
+| Full-text search | `/api/items?fulltext_search=Bern` |
+| Newest first | `/api/items?sort_by=created&sort_order=desc` |
+| Where `dcterms:title` contains "Bern" | `/api/items?property[0][property]=dcterms:title&property[0][type]=in&property[0][text]=Bern` |
+
+::: {.callout-tip}
+## Try it
+Build a URL that returns **only your items** and is limited to **three results**. Then add a search term that matches exactly one of them.
+:::
+
+### 4.3 The exit test: what would you take with you?
+
+Every platform should pass this test: **can I get my data back out?**
+
+1. Open your item set's items in the API, with your own item set ID:
+   `https://omeka.unibe.ch/v4/api/items?item_set_id=<ID>&per_page=50`
+2. Save the page from your browser (**File → Save page as...**, or use the *Save* button of the JSON viewer) as `my-omeka-export.json`.
+3. Open the file in a text editor.
+
+Look at the file and answer:
+
+- Is everything you typed in there? Where are the identifiers you selected in Part 2?
+- Can you tell which resource template you used?
+- Where are the **images**? (You will find URLs, not files.)
+- Where is your **site**, the page you wrote, the theme, the navigation?
+
+::: {.callout-note collapse="true"}
+## What you should find
+The records and their links are all there, in a structured and standard format. What is *not* in the file: the media files themselves (only links), your site's pages and design, and your resource template. To leave Omeka with everything, you would have to collect all of these separately.
+:::
+
+### 4.4 Writing data (just so you know)
+
+The API can also **write**: create, change and delete items. That requires credentials (API keys, created in your user profile), and you would normally use a script in a language such as Python or R. We don't do this today. What matters for you now is that it exists: it is what makes it possible to connect Omeka with other tools in a tool-chain, for example to create items from a spreadsheet or a transcription workflow.
+
+::: {.callout-important}
+Treat API keys like passwords. Never put them in code you commit to GitHub.
+:::
+
+### 4.5 Bulk import from CSV
+
+Typing a hundred items by hand doesn't scale. If the **CSV Import** module is available to you, the workflow is:
+
+1. Prepare a spreadsheet with **one row per item** and **one column per property**.
+2. Name your columns after the property terms, so that Omeka can map them automatically.
+3. Export it as **CSV (UTF-8)**.
+4. Upload it under **CSV Import**, check the column → property mapping, choose your item set, and run the import.
+
+A minimal example:
+
+```csv
+dcterms:title,dcterms:creator,dcterms:date,dcterms:rights,media
+"Postcard of the Zytglogge","Unknown photographer","1905","https://creativecommons.org/publicdomain/mark/1.0/","https://example.org/images/zytglogge.jpg"
+"View from the Bundesterrasse","Unknown photographer","1910","https://creativecommons.org/publicdomain/mark/1.0/","https://example.org/images/bundesterrasse.jpg"
+```
+
+Things that go wrong in practice:
+
+- **Encoding.** Save as UTF-8 or umlauts break.
+- **Multiple values.** One cell can hold several values if you use a separator, which you set in the import options.
+- **Dates.** Spreadsheets love to "helpfully" reformat `1905-03` into a date. Set the column to text first.
+- **Media.** Files must be reachable by URL when the import runs.
+- **Test with three rows first.** Then do the rest.
+
+::: {.callout-note appearance="simple"}
+## Keyword: Exit
+**API** and **CSV** are the two doors of Omeka: one out, one in. Because the data is structured and addressable, you can leave, and you can connect Omeka to other tools. But the exit is partial (media, site, template), so plan for it from the start, not when the maintainer has left.
+:::
+
+---
+
+## What to use when {#what-to-use-when}
+
+### Part 5: GitHub Pages or Omeka?
 
 An honest comparison, since you now have both:
 
-| | GitHub Pages | Omeka |
-|:--|:--|:--|
+| | GitHub Pages | Omeka S |
+|---|---|---|
 | Best for | a text-led argument, a small documented dataset | an object-led collection with rich metadata |
-| Metadata | whatever you define | Dublin Core, enforced |
+| Metadata | whatever you define | Dublin Core by default; other vocabularies possible; consistency enforced **only if you build a resource template** |
 | Who can edit | anyone comfortable with Git | anyone with a login |
 | Hosting | free, static, near-indestructible | needs a server and maintenance |
 | Longevity | very high; it is just files | depends on whoever maintains the instance |
-| Cost of exit | none | export, and hope |
+| Cost of exit | none | an export (the API makes this possible), and hope that the media files and relationships survive the move |
 
-The real question is not which is better. It is: **who will maintain this in five years, and
-what happens when they stop?**
+The real question is not which is better. It is:
 
-::: {.callout-important title="Final-year meeting (II) — 16:00"}
-Students in their final year report on the status of their projects.
-:::
+> **Who will maintain this in five years, and what happens when they stop?**
 
-::: {.callout-tip title="In parallel in the Intro"}
-[Data analysis:
-networks](https://dhbern.github.io/introduction-to-dh/contents/sessions/08.html)
-:::
+### Four more keywords, for the sceptic
+
+The five keywords tell you what Omeka is good at. These four tell you what to check before you commit:
+
+| Keyword | Ask yourself |
+|---|---|
+| **Server** | Who hosts it and keeps it updated? Omeka needs a running server, unlike static files. |
+| **Maintainer** | Who looks after it in five years? What happens when they stop? |
+| **Exit** | Can I get my data out, with media and structure, and in what shape? |
+| **Granularity** | Is the *object* the right unit for my project? Omeka is strong for described objects and weak for long, richly structured texts (that is TEI territory) or for complex networks. |
+
+### Discussion
+
+Take five minutes in pairs. Pick a project, either your own or one of the sites on the [welcome page](https://omeka.unibe.ch/v4/s/omeka/page/welcome), and go through the keywords:
+
+1. **Objects:** Is it *object-led* or *text-led*?
+2. **Metadata:** How much does metadata structure matter to the argument?
+3. **Links:** Do you need to connect to GND, Wikidata, GeoNames or others?
+4. **Curation:** Who edits it, and what do they already know?
+5. **Exit and Maintainer:** Who maintains it in five years, and how would you get out?
+6. Could you do **both**: Omeka for the collection, GitHub Pages for the argument that links to it?
+
+---
+
+## Wrap-up {#wrap-up}
+
+### The five keywords
+
+| Keyword | In one line |
+|---|---|
+| **Objects** | Omeka starts from things, and separates data from display. |
+| **Metadata** | The description is the data, and describing is interpreting. |
+| **Links** | Identifiers and relations, not strings. Constraint (templates) makes them consistent. |
+| **Curation** | A site is an argument, and the argument is yours. |
+| **Exit** | The API and CSV are the doors. Check the exit before you enter. |
+
+### Take-aways
+
+- Omeka S separates **data** (items, item sets, media) from **presentation** (sites, pages, themes).
+- Describing is interpreting. Dublin Core's fifteen elements are simple on the surface and difficult in practice.
+- **Constraint** (resource templates) and **identifiers** (controlled vocabularies) are what make data reusable.
+- A platform is only as open as its **exit**. The API is how you test it.
+- Choose a platform by asking who will maintain it, not by how it looks today.
+
+### Clean-up
+
+- Your test item set and site stay available for now. If you want them removed, or want to continue working on them, write to the DH team.
+
+### Frequently encountered problems
+
+| Problem | Try this |
+|---|---|
+| Can't log in | Check you're on `/admin`; if it still fails, tell us in the session. |
+| Image won't upload | Reduce the file size; use JPG or PNG. |
+| Item doesn't appear on my site | Is it in the item set you attached to the site? Is it set to *public*? |
+| The page looks empty | Add a block to the page. A page without blocks is blank. |
+| I can't see the lookup data types | The module may not be enabled for your role; use the **URI** type and paste the link. |
+| API shows nothing for my item | Private items are only visible when you are logged in. Check the item is public. |
+| Umlauts look garbled after CSV import | Re-save the file as UTF-8. |
+
+### Further reading and tools
+
+- Omeka S [user manual](https://omeka.org/s/docs/user-manual/) and [developer documentation](https://omeka.org/s/docs/developer/)
+- [Dublin Core Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+- Authorities: [GND](https://explore.gnd.network/), [GeoNames](https://www.geonames.org/), [Getty AAT](https://vocab.getty.edu/aat/), [Wikidata](https://www.wikidata.org/)
+- Omeka S at the University of Bern: [service description](https://www.dh.unibe.ch/dienstleistungen/omeka_s/index_ger.html) · questions to <digitalhumanities@unibe.ch>
+- Example sites on the instance: [Hallers 9000 Rezensionen](https://omeka.unibe.ch/v4/s/hallers-9000-rezensionen), [Gebäckmodel Peyer-Ziegler](https://omeka.unibe.ch/v4/s/gebaeckmodel), [Makonde Masks](https://omeka.unibe.ch/v4/s/makonde_masks), [Swiss Sticker Corpus](https://omeka.unibe.ch/v4/s/stickers)
