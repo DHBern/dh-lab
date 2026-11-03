@@ -199,9 +199,7 @@ In Omeka the **description of the object is the data**. Every decision you just 
 
 ---
 
-## Data standards {#data-standards}
-
-### Part 2: Standards in practice {#part-2}
+## Part 2: Data Standards in practice {#part-2}
 
 **Goal:** make your record *more consistent*, by constraining what may be entered, and *more connected*, by linking to external authorities.
 
@@ -334,9 +332,7 @@ A site is where a collection becomes an **argument**: what you show, in which or
 
 ---
 
-## The API {#the-api}
-
-### Part 4: Getting data out {#part-4}
+## Part 4: The API {#part-4}
 
 **Goal:** understand that Omeka is not a closed box. Everything you entered is available as structured data. That is also the test of any publication platform: *can I get my data back out?*
 
@@ -438,9 +434,7 @@ Things that go wrong in practice:
 
 ---
 
-## What to use when {#what-to-use-when}
-
-### Part 5: GitHub Pages or Omeka?
+## Part 5: What to use when {#what-to-use-when}
 
 An honest comparison, since you now have both:
 
@@ -456,17 +450,6 @@ An honest comparison, since you now have both:
 The real question is not which is better. It is:
 
 > **Who will maintain this in five years, and what happens when they stop?**
-
-### Four more keywords, for the sceptic
-
-The five keywords tell you what Omeka is good at. These four tell you what to check before you commit:
-
-| Keyword | Ask yourself |
-|---|---|
-| **Server** | Who hosts it and keeps it updated? Omeka needs a running server, unlike static files. |
-| **Maintainer** | Who looks after it in five years? What happens when they stop? |
-| **Exit** | Can I get my data out, with media and structure, and in what shape? |
-| **Granularity** | Is the *object* the right unit for my project? Omeka is strong for described objects and weak for long, richly structured texts (that is TEI territory) or for complex networks. |
 
 ### Discussion
 
